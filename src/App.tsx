@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { Outlet } from "react-router-dom";
 import "./App.css";
-import { supabase } from "./supabaseClient";
 
 const App: React.FC = () => {
   // const [data, setData] = useState<any[]>([]);
@@ -15,18 +14,7 @@ const App: React.FC = () => {
   //   fetchData();
   // }, []);
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1 className="text-5xl font-bold underline bg-red">Supabase Data</h1>
-        {/* <ul>
-          {data.map(item => (
-            <li key={item.id}>{item.name}</li>
-          ))}
-        </ul> */}
-      </header>
-    </div>
-  );
+  return <Outlet />;
 };
 
 export default App;
