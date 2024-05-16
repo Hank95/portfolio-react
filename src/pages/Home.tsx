@@ -26,7 +26,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import headShot from "/head_shot.png";
-// import Globe from "@/components/globe";
+import GlobeComponent from "@/components/Globe";
 
 export default function Home() {
   // const canInitSupabaseClient = () => {
@@ -45,7 +45,7 @@ export default function Home() {
   useEffect(() => {
     AOS.init({
       once: true,
-      disable: "phone",
+      //   disable: "phone",
       duration: 700,
       easing: "ease-out-cubic",
     });
@@ -54,6 +54,34 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-[100dvh] ">
       <main className="flex-1 justify-center items-center">
+        <div className="relative h-screen flex items-center justify-center bg-gray-900 text-white">
+          <div className="flex items-center justify-between w-full max-w-7xl p-4 md:p-8">
+            <div className="relative z-10 text-left md:w-1/2 p-4 md:p-8">
+              <h1 className="text-3xl md:text-5xl font-bold mb-4">
+                Welcome, Internet Traveler
+              </h1>
+              <p className="text-lg md:text-2xl mb-4">
+                If you feel like it, put a pin where you call home.
+              </p>
+            </div>
+            <div className="relative z-10 md:w-1/2 h-full">
+              <GlobeComponent />
+            </div>
+          </div>
+        </div>
+        {/* <div className="relative h-screen flex items-center justify-center bg-gray-900 text-white">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <GlobeComponent />
+          </div>
+          <div className="relative z-10 text-center p-4 md:p-8 max-w-lg">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4">
+              Welcome, Internet Traveler
+            </h1>
+            <p className="text-lg md:text-2xl mb-4">
+              If you feel like it, put a pin where you call home.
+            </p>
+          </div>
+        </div> */}
         {/* globe section */}
         {/* <section
           className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 opacity-0 translate-y-10 transition-all duration-700"
@@ -102,6 +130,7 @@ export default function Home() {
                 src={headShot}
                 width="550"
               />
+              {/* <GlobeComponent /> */}
             </div>
           </div>
         </section>
