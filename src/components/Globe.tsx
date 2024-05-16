@@ -1,8 +1,9 @@
 // src/components/Globe.tsx
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Globe from "react-globe.gl";
 import { supabase } from "@/lib/supabaseClient";
 import PinModal from "./PinModal";
+import { cities } from "@/data/cities";
 
 interface Pin {
   lat: number;
@@ -16,6 +17,13 @@ interface GlobeClickProps {
   lat: number;
   lng: number;
 }
+interface Label {
+  name: string;
+  lat: number;
+  lng: number;
+}
+
+const initialCoords = { lat: 32.7833, lng: -79.932, name: "Charleston, SC" };
 
 const GlobeComponent: React.FC = () => {
   const [pins, setPins] = useState<Pin[]>([]);
@@ -24,6 +32,18 @@ const GlobeComponent: React.FC = () => {
     lat: number;
     lng: number;
   } | null>(null);
+
+  const globeRef = useRef<any>();
+
+  useEffect(() => {
+    if (globeRef.current) {
+      console.log(globeRef.current);
+      globeRef.current.pointOfView(
+        { lat: initialCoords.lat, lng: initialCoords.lng, altitude: 1.5 },
+        4000
+      );
+    }
+  }, []);
 
   useEffect(() => {
     const fetchPins = async () => {
@@ -49,9 +69,12 @@ const GlobeComponent: React.FC = () => {
     await supabase.from("pins").insert([pin]);
   };
 
+  console.log(pins);
+
   return (
     <div className="w-full h-full">
       <Globe
+        ref={globeRef}
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
         bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
         onGlobeClick={handleGlobeClick}
@@ -63,9 +86,23 @@ const GlobeComponent: React.FC = () => {
         pointRadius={0.2}
         pointColor={(d: object) => (d as Pin).color} // Specify the type of the object as Pin
         width={
-          window.innerWidth > 768 ? window.innerWidth / 2 : window.innerWidth
+          window.innerWidth > 768
+            ? (window.innerWidth * 2) / 3
+            : window.innerWidth
         }
         height={window.innerHeight}
+        labelsData={cities}
+        labelLat={(d: object) => (d as Label).lat}
+        labelLng={(d: object) => (d as Label).lng}
+        labelText={(d: object) => (d as Label).name}
+        labelSize={0.8}
+        labelDotRadius={0.3}
+        labelColor={(d: any) =>
+          d.name === "Charleston"
+            ? "rgb(227, 65, 16)"
+            : "rgba(209, 226, 255, 0.85)"
+        }
+        labelResolution={2}
       />
       {selectedLocation && (
         <PinModal

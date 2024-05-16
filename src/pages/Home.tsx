@@ -54,17 +54,17 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-[100dvh] ">
       <main className="flex-1 justify-center items-center">
-        <div className="relative h-screen flex items-center justify-center bg-gray-900 text-white">
-          <div className="flex items-center justify-between w-full max-w-7xl p-4 md:p-8">
-            <div className="relative z-10 text-left md:w-1/2 p-4 md:p-8">
-              <h1 className="text-3xl md:text-5xl font-bold mb-4">
-                Welcome, Internet Traveler
+        <div className="relative h-screen flex justify-center bg-gray-900 text-white w-100%">
+          <div className="flex items-center  w-full max-w-7xl p-4 md:p-8">
+            <div className="relative z-10 text-left md:w-1/3 p-4 md:p-8">
+              <h1 className="text-3xl md:text-4xl font-bold mb-4">
+                Greetings from Charleston, SC!
               </h1>
               <p className="text-lg md:text-2xl mb-4">
-                If you feel like it, put a pin where you call home.
+                Please feel free to put a pin in the globe where you call home.
               </p>
             </div>
-            <div className="relative z-10 md:w-1/2 h-full">
+            <div className="relative z-10 md:w-2/3 h-fulln w-full">
               <GlobeComponent />
             </div>
           </div>

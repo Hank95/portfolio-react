@@ -46,7 +46,7 @@ const PinModal: React.FC<PinModalProps> = ({
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
-      <div className="bg-white p-4 rounded-lg">
+      <div className="bg-white p-4 rounded-lg text-black">
         <h2 className="text-xl mb-4">Add a Pin</h2>
         <div className="mb-2">
           <label className="block mb-1">Name</label>
