@@ -1,20 +1,16 @@
 import { Outlet } from "react-router-dom";
+import Header from "@/components/Header.tsx";
+import Footer from "@/components/Footer.tsx";
 import "./App.css";
 
 const App: React.FC = () => {
-  // const [data, setData] = useState<any[]>([]);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     let { data: items, error } = await supabase.from('items').select('*');
-  //     if (error) console.error('Error fetching data:', error);
-  //     else setData(items);
-  //   };
-
-  //   fetchData();
-  // }, []);
-
-  return <Outlet />;
+  return (
+    <>
+      <Header />
+      <Outlet />
+      <Footer />
+    </>
+  );
 };
 
 export default App;
