@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { HPLogoIcon } from "./Icons";
+import { HPLogoIconWhite } from "./Icons";
 export default function Header() {
   return (
     <header className="px-4 lg:px-6 h-14 flex items-center bg-[#4d6e5e] text-white">
       <Link className="flex items-center justify-center" to="/">
-        <HPLogoIcon className="h-12 w-12" />
+        <HPLogoIconWhite className="h-12 w-12" />
         <span className="sr-only">Henry Pendleton's Portfolio</span>
       </Link>
       <nav className="ml-auto flex gap-4 sm:gap-6">

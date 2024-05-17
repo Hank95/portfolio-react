@@ -65,11 +65,11 @@ export default function Home() {
                   Full-Stack Web Developer
                 </h2>
                 <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  I'm a passionate web developer with over 5 years of experience
-                  building modern, responsive, and scalable web applications.
-                  Proficient in both front-end and back-end technologies, I
-                  specialize in creating intuitive user experiences and
-                  implementing robust, efficient solutions.
+                  I'm a passionate web developer with 2 solid years of
+                  experience building modern, responsive, and scalable web
+                  applications. Proficient in both front-end and back-end
+                  technologies, I specialize in creating intuitive user
+                  experiences and implementing robust, efficient solutions.
                 </p>
                 {/* a button to contact me */}
                 <Link className="w-full" to="/contact">
