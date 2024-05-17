@@ -69,10 +69,8 @@ const GlobeComponent: React.FC = () => {
     await supabase.from("pins").insert([pin]);
   };
 
-  console.log(pins);
-
   return (
-    <div className="w-full h-full">
+    <div className="globe-container">
       <Globe
         ref={globeRef}
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
@@ -85,12 +83,12 @@ const GlobeComponent: React.FC = () => {
         pointAltitude={0.05}
         pointRadius={0.2}
         pointColor={(d: object) => (d as Pin).color} // Specify the type of the object as Pin
-        width={
-          window.innerWidth > 768
-            ? (window.innerWidth * 2) / 3
-            : window.innerWidth
-        }
-        height={window.innerHeight}
+        // width={
+        //   window.innerWidth > 768
+        //     ? (window.innerWidth * 2) / 3
+        //     : window.innerWidth
+        // }
+        // height={window.innerHeight}
         labelsData={cities}
         labelLat={(d: object) => (d as Label).lat}
         labelLng={(d: object) => (d as Label).lng}

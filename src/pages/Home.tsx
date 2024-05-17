@@ -54,7 +54,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-[100dvh] ">
       <main className="flex-1 justify-center items-center">
-        <div className="relative h-screen flex justify-center bg-gray-900 text-white w-100%">
+        {/* <div className="relative h-screen flex justify-center bg-gray-900 text-white w-100%">
           <div className="flex items-center  w-full max-w-7xl p-4 md:p-8">
             <div className="relative z-10 text-left md:w-1/3 p-4 md:p-8">
               <h1 className="text-3xl md:text-4xl font-bold mb-4">
@@ -68,38 +68,7 @@ export default function Home() {
               <GlobeComponent />
             </div>
           </div>
-        </div>
-        {/* <div className="relative h-screen flex items-center justify-center bg-gray-900 text-white">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <GlobeComponent />
-          </div>
-          <div className="relative z-10 text-center p-4 md:p-8 max-w-lg">
-            <h1 className="text-3xl md:text-5xl font-bold mb-4">
-              Welcome, Internet Traveler
-            </h1>
-            <p className="text-lg md:text-2xl mb-4">
-              If you feel like it, put a pin where you call home.
-            </p>
-          </div>
         </div> */}
-        {/* globe section */}
-        {/* <section
-          className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 opacity-0 translate-y-10 transition-all duration-700"
-          data-aos="fade-up"
-          id="globe"
-        >
-          <div className="container px-4 md:px-6">
-            <div className="space-y-4">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#4d6e5e]">
-                My Travels
-              </h2>
-              <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Explore the places I've visited around the world.
-              </p>
-            </div>
-            <Globe />
-          </div>
-        </section> */}
         <section
           className="w-full py-12 md:py-24 lg:py-32  px-12 opacity-0 translate-y-10 transition-all duration-700"
           data-aos="fade-up"
@@ -158,10 +127,46 @@ export default function Home() {
                   <CardTitle className="text-[#4d6e5e]">
                     Lead Frontend Developer
                   </CardTitle>
-                  <CardDescription>Acme Inc. | 2022 - Present</CardDescription>
+                  <CardDescription>Apex 146 | 2022 - Present</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                  <h4 className="text-lg font-semibold text-gray-500 dark:text-gray-400">
+                    White Label Virtual Sports Platform
+                  </h4>
+                  <ul className="list-disc list-inside m-4 space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                    <li className="text-gray-800 flex items-center">
+                      Spearheaded the development of a customized livestream
+                      ecosystem, tailored to effortlessly integrate into a
+                      white-label virtual sports betting service.
+                    </li>
+                    <li className="text-gray-800 flex items-center">
+                      Directed and executed the front-end development process,
+                      ensuring a seamless and intuitive user interface.
+                    </li>
+                    <li className="text-gray-800 flex items-center">
+                      Utilized real-world racer data to craft captivating and
+                      entertaining virtual races, enhancing user immersion and
+                      interaction.
+                    </li>
+                  </ul>
+                  <h4 className="text-lg font-semibold text-gray-500 dark:text-gray-400">
+                    SprintGP.com
+                  </h4>
+                  <ul className="list-disc list-inside m-4 space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                    <li className="text-gray-800 flex items-center">
+                      Collaborated with the backend team to create an action
+                      sports betting and gaming web platform.
+                    </li>
+                    <li className="text-gray-800 flex items-center">
+                      Leveraged backend data through API to create an attractive
+                      and intuitive user interface using React.JS.
+                    </li>
+                    <li className="text-gray-800 flex items-center">
+                      The project is a Web3 application hosted with the Ethereum
+                      blockchain and leveraging Metamask integration.
+                    </li>
+                  </ul>
+                  {/* <p className="text-sm text-gray-500 dark:text-gray-400">
                     As a Senior Web Developer at Acme Inc., I've been
                     responsible for leading the development of several
                     high-profile web applications. I've worked closely with
@@ -184,43 +189,7 @@ export default function Home() {
                       </span>
                       React, Next.js, Node.js, Express, MongoDB, AWS
                     </li>
-                  </ul>
-                </CardContent>
-              </Card>
-              <Card
-                className="border-[#4d6e5e] shadow-lg opacity-0 -translate-x-10 transition-all duration-700"
-                data-aos="fade-left"
-              >
-                <CardHeader>
-                  <CardTitle className="text-[#4d6e5e]">
-                    Web Developer
-                  </CardTitle>
-                  <CardDescription>Acme Corp. | 2017 - 2020</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    As a Web Developer at Acme Corp., I was responsible for
-                    building and maintaining a variety of web applications for
-                    the company's clients. I worked closely with designers and
-                    project managers to deliver high-quality, responsive, and
-                    user-friendly solutions.
-                  </p>
-                  <ul className="mt-4 space-y-2 text-sm text-gray-500 dark:text-gray-400">
-                    <li>
-                      <span className="font-medium text-gray-900 dark:text-gray-100">
-                        Key Achievements:
-                      </span>
-                      Developed a custom content management system that enabled
-                      the client to easily update and manage their website,
-                      resulting in a 50% reduction in maintenance costs.
-                    </li>
-                    <li>
-                      <span className="font-medium text-gray-900 dark:text-gray-100">
-                        Technologies Used:
-                      </span>
-                      HTML, CSS, JavaScript, WordPress, PHP, MySQL
-                    </li>
-                  </ul>
+                  </ul> */}
                 </CardContent>
               </Card>
             </div>

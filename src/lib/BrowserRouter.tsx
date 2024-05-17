@@ -3,6 +3,7 @@ import App from "../App";
 import ErrorPage from "../pages/errorPage";
 import Home from "../pages/Home";
 import ResumePage from "../pages/ResumePage";
+import GlobePage from "@/pages/GlobePage";
 export const BrowserRouter = createBrowserRouter([
   {
     path: "/",
@@ -11,6 +12,7 @@ export const BrowserRouter = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "resume", element: <ResumePage /> },
+      { path: "globe", element: <GlobePage /> },
     ],
   },
 ]);
