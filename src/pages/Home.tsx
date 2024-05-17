@@ -1,10 +1,3 @@
-// import DeployButton from "../components/DeployButton";
-// import AuthButton from "../components/AuthButton";
-// import { createClient } from "@/utils/supabase/server";
-// import ConnectSupabaseSteps from "@/components/tutorial/ConnectSupabaseSteps";
-// import SignUpUserSteps from "@/components/tutorial/SignUpUserSteps";
-// import Header from "@/components/Header.tsx";
-// import Footer from "@/components/Footer.tsx";
 import {
   CardTitle,
   CardDescription,
@@ -26,22 +19,8 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import headShot from "/head_shot.png";
-import GlobeComponent from "@/components/Globe";
 
 export default function Home() {
-  // const canInitSupabaseClient = () => {
-  //   // This function is just for the interactive tutorial.
-  //   // Feel free to remove it once you have Supabase connected.
-  //   try {
-  //     createClient();
-  //     return true;
-  //   } catch (e) {
-  //     return false;
-  //   }
-  // };
-
-  // const isSupabaseConnected = canInitSupabaseClient();
-
   useEffect(() => {
     AOS.init({
       once: true,
