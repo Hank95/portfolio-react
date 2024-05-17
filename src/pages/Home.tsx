@@ -19,8 +19,8 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import headShot from "/head_shot.png";
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import ContactForm from "@/components/ContactsForm";
 
 export default function Home() {
   useEffect(() => {
@@ -367,6 +367,13 @@ export default function Home() {
               </Card>
             </div>
           </div>
+        </section>
+        <section
+          className="w-full py-12 md:py-24 lg:py-32 opacity-0 translate-y-10 transition-all duration-700"
+          data-aos="fade-up"
+          id="contact"
+        >
+          <ContactForm />
         </section>
       </main>
     </div>
