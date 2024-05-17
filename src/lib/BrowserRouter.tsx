@@ -4,6 +4,7 @@ import ErrorPage from "../pages/errorPage";
 import Home from "../pages/Home";
 import ResumePage from "../pages/ResumePage";
 import GlobePage from "@/pages/GlobePage";
+import Contact from "@/pages/ContactsPage";
 export const BrowserRouter = createBrowserRouter([
   {
     path: "/",
@@ -13,6 +14,7 @@ export const BrowserRouter = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "resume", element: <ResumePage /> },
       { path: "globe", element: <GlobePage /> },
+      { path: "contact", element: <Contact /> },
     ],
   },
 ]);
