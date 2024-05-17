@@ -19,6 +19,8 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import headShot from "/head_shot.png";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   useEffect(() => {
@@ -69,6 +71,12 @@ export default function Home() {
                   specialize in creating intuitive user experiences and
                   implementing robust, efficient solutions.
                 </p>
+                {/* a button to contact me */}
+                <Link className="w-full" to="/contact">
+                  <div className="inline-flex h-10 items-center justify-center rounded bg-[#4d6e5e] px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-[#4d6e5e]/90 pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50">
+                    Reach out!
+                  </div>
+                </Link>
               </div>
               <img
                 alt="Henry Pendleton"
@@ -78,7 +86,6 @@ export default function Home() {
                 src={headShot}
                 width="550"
               />
-              {/* <GlobeComponent /> */}
             </div>
           </div>
         </section>
