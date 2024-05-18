@@ -18,9 +18,10 @@ import {
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import headShot from "/head_shot@0.5x.png";
+import headShot from "/head_shot@0.5x.webp";
 import { Link } from "react-router-dom";
 import ContactForm from "@/components/ContactsForm";
+import { Helmet } from "react-helmet-async";
 
 export default function Home() {
   useEffect(() => {
@@ -34,6 +35,37 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-[100dvh] ">
+      <Helmet>
+        <title>Home - Henry Pendleton</title>
+        <meta
+          name="description"
+          content="Welcome to Henry Pendleton's portfolio. Discover his projects and skills as a full-stack software engineer."
+        />
+        <meta
+          name="keywords"
+          content="Henry Pendleton, portfolio, full-stack software engineer, React, Next.js, web developer"
+        />
+        <meta name="author" content="Henry Pendleton" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <meta property="og:title" content="Home - Henry Pendleton" />
+        <meta
+          property="og:description"
+          content="Welcome to Henry Pendleton's portfolio. Discover his projects and skills as a full-stack software engineer."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://henrypendleton.netlify.app/" />
+        <meta property="og:image" content="URL to your image" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Home - Henry Pendleton" />
+        <meta
+          name="twitter:description"
+          content="Welcome to Henry Pendleton's portfolio. Discover his projects and skills as a full-stack software engineer."
+        />
+        <meta name="twitter:image" content="URL to your image" />
+      </Helmet>
+
       <main className="flex-1 justify-center items-center">
         {/* <div className="relative h-screen flex justify-center bg-gray-900 text-white w-100%">
           <div className="flex items-center  w-full max-w-7xl p-4 md:p-8">
