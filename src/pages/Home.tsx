@@ -18,7 +18,7 @@ import {
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import headShot from "/head_shot.png";
+import headShot from "/head_shot@0.5x.png";
 import { Link } from "react-router-dom";
 import ContactForm from "@/components/ContactsForm";
 
@@ -55,7 +55,7 @@ export default function Home() {
           data-aos="fade-up"
           id="about"
         >
-          <div className="container px-4 md:px-6">
+          <div className="px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_550px]">
               <div className="space-y-4">
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl lg:text-6xl text-[#4d6e5e]">
@@ -368,13 +368,13 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section
+        {/* <section
           className="w-full py-12 md:py-24 lg:py-32 opacity-0 translate-y-10 transition-all duration-700"
           data-aos="fade-up"
           id="contact"
         >
           <ContactForm />
-        </section>
+        </section> */}
       </main>
     </div>
   );
