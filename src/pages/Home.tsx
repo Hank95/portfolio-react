@@ -368,13 +368,13 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* <section
+        <section
           className="w-full py-12 md:py-24 lg:py-32 opacity-0 translate-y-10 transition-all duration-700"
           data-aos="fade-up"
           id="contact"
         >
           <ContactForm />
-        </section> */}
+        </section>
       </main>
     </div>
   );
