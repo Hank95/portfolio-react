@@ -1,3 +1,7 @@
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import {
   CardTitle,
   CardDescription,
@@ -15,23 +19,42 @@ import {
   TypeIcon,
   ArrowRightIcon,
 } from "@/components/Icons.tsx";
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import headShot from "/head_shot@0.5x.webp";
 import { Link } from "react-router-dom";
 import ContactForm from "@/components/ContactsForm";
 import { Helmet } from "react-helmet-async";
+import useSmoothScroll from "@/hooks/useSmoothScroll";
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     AOS.init({
       once: true,
-      //   disable: "phone",
       duration: 700,
       easing: "ease-out-cubic",
     });
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Adjust the delay as needed
   }, []);
+
+  useSmoothScroll();
+
+  if (loading) {
+    return (
+      <motion.div
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 0 }}
+        exit={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="fixed inset-0 flex items-center justify-center bg-gray-900 text-white"
+      >
+        <h1>Loading...</h1>
+      </motion.div>
+    );
+  }
 
   return (
     <div className="flex flex-col min-h-[100dvh] ">
@@ -67,53 +90,59 @@ export default function Home() {
       </Helmet>
 
       <main className="flex-1 justify-center items-center bg-gray-50 dark:bg-gray-800">
-        {/* <div className="relative h-screen flex justify-center bg-gray-900 text-white w-100%">
-          <div className="flex items-center  w-full max-w-7xl p-4 md:p-8">
-            <div className="relative z-10 text-left md:w-1/3 p-4 md:p-8">
-              <h1 className="text-3xl md:text-4xl font-bold mb-4">
-                Greetings from Charleston, SC!
-              </h1>
-              <p className="text-lg md:text-2xl mb-4">
-                Please feel free to put a pin in the globe where you call home.
-              </p>
-            </div>
-            <div className="relative z-10 md:w-2/3 h-fulln w-full">
-              <GlobeComponent />
-            </div>
-          </div>
-        </div> */}
         <section
-          className="w-full py-12 md:py-24 lg:py-32  px-12 opacity-0 translate-y-10 transition-all duration-700"
+          className="w-full py-12 md:py-24 lg:py-32 px-12 opacity-0 translate-y-10 transition-all duration-700"
           data-aos="fade-up"
           id="about"
         >
           <div className="px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_550px]">
-              <div className="flex flex-col space-y-4 justify-center ">
-                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl lg:text-6xl text-[#4d6e5e] dark:text-[#a8d5ba]">
+              <div className="flex flex-col space-y-4 justify-center">
+                <motion.h1
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 1 }}
+                  className="text-4xl font-bold tracking-tighter sm:text-5xl lg:text-6xl text-[#4d6e5e] dark:text-[#a8d5ba]"
+                >
                   Henry Pendleton
-                </h1>
-                <h2 className="text-2xl font-semibold text-gray-500 dark:text-gray-400">
+                </motion.h1>
+                <motion.h2
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                  className="text-2xl font-semibold text-gray-500 dark:text-gray-400"
+                >
                   Full-Stack Web Developer
-                </h2>
-                <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                </motion.h2>
+                <motion.p
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: 1 }}
+                  className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400"
+                >
                   I'm a passionate web developer with 2 solid years of
                   experience building modern, responsive, and scalable web
                   applications. Proficient in both front-end and back-end
                   technologies, I specialize in creating intuitive user
                   experiences and implementing robust, efficient solutions.
-                </p>
-                {/* a button to contact me */}
+                </motion.p>
                 <Link className="w-full" to="/contact">
-                  <div className="inline-flex h-10 items-center justify-center rounded bg-[#4d6e5e] dark:bg-[#a8d5ba] px-8 text-xl font-medium text-gray-50 dark:text-gray-500 shadow transition-colors hover:bg-[#4d6e5e]/90 pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 mt-8">
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 1.5 }}
+                    className="inline-flex h-10 items-center justify-center rounded bg-[#4d6e5e] dark:bg-[#a8d5ba] px-8 text-xl font-medium text-gray-50 dark:text-gray-500 shadow transition-colors hover:bg-[#4d6e5e]/90 pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 mt-8"
+                  >
                     Reach out!
-                  </div>
+                  </motion.div>
                 </Link>
               </div>
-              <img
+              <motion.img
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 1 }}
                 alt="Henry Pendleton"
-                className="mx-auto aspect-square overflow-hidden rounded-full object-cover sm:w-full opacity-0 translate-x-10 transition-all duration-700"
-                data-aos="fade-left"
+                className="mx-auto aspect-square overflow-hidden rounded-full object-cover sm:w-full"
                 height="550"
                 src={headShot}
                 width="550"
@@ -121,6 +150,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Repeat similar motion.div sections for Work Experience, Skills, and Education */}
+        {/* Example for Work Experience */}
         <section
           className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800 opacity-0 translate-y-10 transition-all duration-700"
           data-aos="fade-up"
@@ -128,19 +160,31 @@ export default function Home() {
         >
           <div className="px-4 md:px-6">
             <div className="space-y-4">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#4d6e5e] dark:text-[#a8d5ba]">
+              <motion.h2
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1.5 }}
+                className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#4d6e5e] dark:text-[#a8d5ba]"
+              >
                 Work Experience
-              </h2>
-              <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 2 }}
+                className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400"
+              >
                 Take a look at my professional journey and the projects I've
                 worked on.
-              </p>
+              </motion.p>
             </div>
-            <div className="mt-8 grid gap-6">
-              <Card
-                className="border-[#4d6e5e] dark:border-[#a8d5ba] shadow-lg opacity-0 translate-x-10 transition-all duration-700"
-                data-aos="fade-right"
-              >
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 2.5 }}
+              className="mt-8 grid gap-6"
+            >
+              <Card className="border-[#4d6e5e] dark:border-[#a8d5ba] shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-[#4d6e5e] dark:text-[#a8d5ba]">
                     Lead Frontend Developer
@@ -188,7 +232,7 @@ export default function Home() {
                   </ul>
                 </CardContent>
               </Card>
-            </div>
+            </motion.div>
           </div>
         </section>
         <section
