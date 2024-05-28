@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900">
       <Helmet>
         <title>Contact - Henry Pendleton</title>
         <meta

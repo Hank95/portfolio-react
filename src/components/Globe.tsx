@@ -37,7 +37,6 @@ const GlobeComponent: React.FC = () => {
 
   useEffect(() => {
     if (globeRef.current) {
-      console.log(globeRef.current);
       globeRef.current.pointOfView(
         { lat: initialCoords.lat, lng: initialCoords.lng, altitude: 1.5 },
         4000
