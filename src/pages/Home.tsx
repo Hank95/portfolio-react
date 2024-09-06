@@ -151,22 +151,25 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <h4 className="text-lg font-semibold text-gray-500 dark:text-gray-400">
-                    White Label Virtual Sports Platform
+                    White Label Action Sports Data Visualization Platform
                   </h4>
                   <ul className="list-disc list-inside m-4 space-y-2 text-sm text-gray-500 dark:text-gray-400">
                     <li className="text-gray-800 dark:text-gray-300">
-                      Spearheaded the development of a customized livestream
-                      ecosystem, tailored to effortlessly integrate into a
-                      white-label virtual sports betting service.
+                      Developed a comprehensive data visualization application
+                      for MotoGP and F1 racer statistics, featuring interactive
+                      heat maps, scatterplots, and bump charts
                     </li>
                     <li className="text-gray-800 dark:text-gray-300">
-                      Directed and executed the front-end development process,
-                      ensuring a seamless and intuitive user interface.
+                      Designed custom SVG graphics of racecourses to analyze
+                      racer performance on specific track sections.
                     </li>
                     <li className="text-gray-800 dark:text-gray-300">
-                      Utilized real-world racer data to craft captivating and
-                      entertaining virtual races, enhancing user immersion and
-                      interaction.
+                      Enabled teams to track and analyze racer performance over
+                      time, improving strategic decision-making.
+                    </li>
+                    <li className="text-gray-800 dark:text-gray-300">
+                      Created intuitive and visually appealing graphics for
+                      media outlets to enhance their coverage.
                     </li>
                   </ul>
                   <h4 className="text-lg font-semibold text-gray-500 dark:text-gray-400">
