@@ -1,20 +1,51 @@
+import { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import ErrorPage from "../pages/errorPage";
-import Home from "../pages/Home";
-import ResumePage from "../pages/ResumePage";
-import GlobePage from "@/pages/GlobePage";
-import Contact from "@/pages/ContactsPage";
+
+const Home = lazy(() => import("../pages/Home"));
+const ResumePage = lazy(() => import("../pages/ResumePage"));
+const GlobePage = lazy(() => import("@/pages/GlobePage"));
+const Contact = lazy(() => import("@/pages/ContactsPage"));
+
 export const BrowserRouter = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <Home /> },
-      { path: "resume", element: <ResumePage /> },
-      { path: "globe", element: <GlobePage /> },
-      { path: "contact", element: <Contact /> },
+      {
+        index: true,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <Home />
+          </Suspense>
+        ),
+      },
+      {
+        path: "resume",
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <ResumePage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "globe",
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <GlobePage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "contact",
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <Contact />
+          </Suspense>
+        ),
+      },
     ],
   },
 ]);
