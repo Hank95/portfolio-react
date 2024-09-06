@@ -1,8 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { HPLogoIconWhite } from "./Icons";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  const linkClasses = (path: string) =>
+    `text-sm font-medium hover:underline underline-offset-4 ${
+      currentPath === path
+        ? "text-yellow-400 dark:text-yellow-300 underline"
+        : "text-gray-200 dark:text-gray-300 hover:text-gray-200 dark:hover:text-gray-300"
+    }`;
+
   return (
     <header className="px-4 lg:px-6 h-14 flex items-center bg-[#4d6e5e] text-white dark:bg-gray-900 dark:text-gray-50">
       <Link className="flex items-center justify-center" to="/">
@@ -10,22 +20,13 @@ export default function Header() {
         <span className="sr-only">Henry Pendleton's Portfolio</span>
       </Link>
       <nav className="ml-auto flex items-center gap-4 sm:gap-6">
-        <Link
-          className="text-sm font-medium hover:underline underline-offset-4 hover:text-gray-200 dark:hover:text-gray-300"
-          to="/"
-        >
+        <Link className={linkClasses("/")} to="/">
           About
         </Link>
-        <Link
-          className="text-sm font-medium hover:underline underline-offset-4 hover:text-gray-200 dark:hover:text-gray-300"
-          to="/globe"
-        >
+        <Link className={linkClasses("/globe")} to="/globe">
           Pin Map
         </Link>
-        <Link
-          className="text-sm font-medium hover:underline underline-offset-4 hover:text-gray-200 dark:hover:text-gray-300"
-          to="/contact"
-        >
+        <Link className={linkClasses("/contact")} to="/contact">
           Contact
         </Link>
         <ThemeToggle />
