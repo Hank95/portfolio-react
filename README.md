@@ -87,6 +87,16 @@ Feel free to reach out to me via the contact form on the site or through the fol
 
 Thank you for visiting my portfolio!
 
+## Testing
+
+This project uses Vitest and React Testing Library for testing.
+
+To run tests:
+```sh
+npm run test
 ```
 
+To view coverage report:
+```sh
+npm run test:coverage
 ```

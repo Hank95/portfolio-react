@@ -14,7 +14,7 @@ const ThemeToggle: React.FC = () => {
 
   const { theme, setTheme } = themeContext;
 
-  const handleThemeChange = (newTheme: string) => {
+  const handleThemeChange = (newTheme: "light" | "dark" | "system") => {
     setTheme(newTheme);
     if (newTheme === "system") {
       const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
@@ -49,6 +49,7 @@ const ThemeToggle: React.FC = () => {
       <button
         className="p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600  text-gray-700 dark:text-gray-300"
         onClick={() => setIsOpen(!isOpen)}
+        aria-label="Toggle theme"
       >
         {theme === "system" ? (
           <FaDesktop />
