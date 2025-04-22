@@ -67,21 +67,6 @@ export default function Home() {
       </Helmet>
 
       <main className="flex-1 justify-center items-center bg-gray-50 dark:bg-gray-800">
-        {/* <div className="relative h-screen flex justify-center bg-gray-900 text-white w-100%">
-          <div className="flex items-center  w-full max-w-7xl p-4 md:p-8">
-            <div className="relative z-10 text-left md:w-1/3 p-4 md:p-8">
-              <h1 className="text-3xl md:text-4xl font-bold mb-4">
-                Greetings from Charleston, SC!
-              </h1>
-              <p className="text-lg md:text-2xl mb-4">
-                Please feel free to put a pin in the globe where you call home.
-              </p>
-            </div>
-            <div className="relative z-10 md:w-2/3 h-fulln w-full">
-              <GlobeComponent />
-            </div>
-          </div>
-        </div> */}
         <section
           className="w-full py-12 md:py-24 lg:py-32  px-12 opacity-0 translate-y-10 transition-all duration-700"
           data-aos="fade-up"
@@ -97,13 +82,12 @@ export default function Home() {
                   Full-Stack Web Developer
                 </h2>
                 <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  I'm a passionate web developer with 2 solid years of
-                  experience building modern, responsive, and scalable web
-                  applications. Proficient in both front-end and back-end
-                  technologies, I specialize in creating intuitive user
-                  experiences and implementing robust, efficient solutions.
+                  Full-Stack Web Developer with 3+ years of experience building
+                  modern, responsive, and scalable web applications. Proficient
+                  in both front-end and back-end technologies, I specialize in
+                  creating intuitive user experiences and implementing robust,
+                  efficient solutions.
                 </p>
-                {/* a button to contact me */}
                 <Link className="w-full" to="/contact">
                   <div className="inline-flex h-10 items-center justify-center rounded bg-[#4d6e5e] dark:bg-[#a8d5ba] px-8 text-xl font-medium text-gray-50 dark:text-gray-500 shadow transition-colors hover:bg-[#4d6e5e]/90 pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 mt-8">
                     Reach out!
@@ -156,8 +140,10 @@ export default function Home() {
                   <ul className="list-disc list-inside m-4 space-y-2 text-sm text-gray-500 dark:text-gray-400">
                     <li className="text-gray-800 dark:text-gray-300">
                       Developed a comprehensive data visualization application
-                      for MotoGP and F1 racer statistics, featuring interactive
-                      heat maps, scatterplots, and bump charts
+                      using React & TypeScript for MotoGP and F1 racer
+                      statistics, featuring interactive heat maps, scatterplots,
+                      and bump charts, enhancing user insights and data
+                      accessibility by approximately 25%.
                     </li>
                     <li className="text-gray-800 dark:text-gray-300">
                       Designed custom SVG graphics of racecourses to analyze
@@ -171,18 +157,27 @@ export default function Home() {
                       Created intuitive and visually appealing graphics for
                       media outlets to enhance their coverage.
                     </li>
+                    <li className="text-gray-800 dark:text-gray-300">
+                      Fostered a collaborative, feedback-driven environment,
+                      contributing to a 40% reduction in reported UI bugs over
+                      time.
+                    </li>
                   </ul>
                   <h4 className="text-lg font-semibold text-gray-500 dark:text-gray-400">
-                    SprintGP.com
+                    SprintGP.com - Web3 Gaming Platform
                   </h4>
                   <ul className="list-disc list-inside m-4 space-y-2 text-sm text-gray-500 dark:text-gray-400">
                     <li className="text-gray-800 dark:text-gray-300">
                       Collaborated with the backend team to create an action
-                      sports betting and gaming web platform.
+                      sports gaming web platform.
                     </li>
                     <li className="text-gray-800 dark:text-gray-300">
                       Leveraged backend data through API to create an attractive
                       and intuitive user interface using React.JS.
+                    </li>
+                    <li className="text-gray-800 dark:text-gray-300">
+                      Leveraged AWS for data storage and scalability, resulting
+                      in a 3x improvement in data processing speed.
                     </li>
                     <li className="text-gray-800 dark:text-gray-300">
                       The project is a Web3 application hosted with the Ethereum
@@ -256,6 +251,21 @@ export default function Home() {
               <div
                 className="flex flex-col items-center space-y-2 opacity-0 translate-x-10 transition-all duration-700"
                 data-aos="fade-right"
+                data-aos-delay="250"
+              >
+                <DatabaseIcon className="h-12 w-12 text-[#4d6e5e] dark:text-[#a8d5ba]" />
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#4d6e5e] dark:text-[#a8d5ba]">
+                    MySQL
+                  </h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    SQL Database
+                  </p>
+                </div>
+              </div>
+              <div
+                className="flex flex-col items-center space-y-2 opacity-0 translate-x-10 transition-all duration-700"
+                data-aos="fade-right"
                 data-aos-delay="300"
               >
                 <CloudIcon className="h-12 w-12 text-[#4d6e5e] dark:text-[#a8d5ba]" />
@@ -265,6 +275,21 @@ export default function Home() {
                   </h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
                     Cloud Platform
+                  </p>
+                </div>
+              </div>
+              <div
+                className="flex flex-col items-center space-y-2 opacity-0 translate-x-10 transition-all duration-700"
+                data-aos="fade-right"
+                data-aos-delay="350"
+              >
+                <DatabaseIcon className="h-12 w-12 text-[#4d6e5e] dark:text-[#a8d5ba]" />
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#4d6e5e] dark:text-[#a8d5ba]">
+                    Supabase
+                  </h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    Backend as a Service
                   </p>
                 </div>
               </div>
@@ -328,21 +353,37 @@ export default function Home() {
                   </p>
                 </div>
               </div>
+              <div
+                className="flex flex-col items-center space-y-2 opacity-0 -translate-x-10 transition-all duration-700"
+                data-aos="fade-left"
+                data-aos-delay="500"
+              >
+                <ComponentIcon className="h-12 w-12 text-[#4d6e5e] dark:text-[#a8d5ba]" />
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#4d6e5e] dark:text-[#a8d5ba]">
+                    Docker
+                  </h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    Containerization
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
         <section
           className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800 opacity-0 translate-y-10 transition-all duration-700"
           data-aos="fade-up"
-          id="education"
+          id="projects"
         >
           <div className="px-4 md:px-6">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#4d6e5e] dark:text-[#a8d5ba]">
-                Education
+                Technical Projects
               </h2>
               <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Check out my academic and professional certifications.
+                Showcasing personal initiative and exploration of new
+                technologies.
               </p>
             </div>
             <div className="mt-8 grid gap-6">
@@ -352,37 +393,28 @@ export default function Home() {
               >
                 <CardHeader>
                   <CardTitle className="text-[#4d6e5e] dark:text-[#a8d5ba]">
-                    Full Stack Web Development
+                    TreasureMap - Community-Based Treasure Hunt App
                   </CardTitle>
                   <CardDescription className="dark:text-gray-400">
-                    Flatiron School | 2021
+                    Personal Project | In Progress
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    Completed an intensive program focused on Full Stack Web
-                    Development using Ruby on Rails and JavaScript/React. Gained
-                    hands-on experience building robust web applications from
-                    scratch, mastering both backend and frontend development.
-                    Developed proficiency in creating dynamic user experiences,
-                    working with APIs, and managing databases. The program
-                    emphasized best practices in software engineering,
-                    collaborative workflows, and agile methodologies.
-                  </p>
+                  <ul className="list-disc list-inside m-4 space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                    <li className="text-gray-800 dark:text-gray-300">
+                      Building a React Native/Expo app with Supabase backend for
+                      community-driven treasure hunts.
+                    </li>
+                    <li className="text-gray-800 dark:text-gray-300">
+                      Implementing real-time tracking, map visualization, and
+                      game state persistence.
+                    </li>
+                    <li className="text-gray-800 dark:text-gray-300">
+                      Creating a companion web app for browsing and creating
+                      hunts with a map interface.
+                    </li>
+                  </ul>
                 </CardContent>
-              </Card>
-              <Card
-                className="border-[#4d6e5e] dark:border-[#a8d5ba] shadow-lg opacity-0 -translate-x-10 transition-all duration-700"
-                data-aos="fade-left"
-              >
-                <CardHeader>
-                  <CardTitle className="text-[#4d6e5e] dark:text-[#a8d5ba]">
-                    Bachelor of Art in Business Economics
-                  </CardTitle>
-                  <CardDescription className="dark:text-gray-400">
-                    St. Lawrence University | 2014 - 2018
-                  </CardDescription>
-                </CardHeader>
               </Card>
             </div>
           </div>
