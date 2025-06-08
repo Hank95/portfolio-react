@@ -1,6 +1,7 @@
 // src/components/ThemeToggle.tsx
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { ThemeContext } from "../context/ThemeContext";
+import { trackThemeToggle } from "@/lib/analytics";
 import { FaSun, FaMoon, FaDesktop } from "react-icons/fa";
 
 const ThemeToggle: React.FC = () => {
@@ -22,8 +23,10 @@ const ThemeToggle: React.FC = () => {
         ? "dark"
         : "light";
       document.documentElement.classList.toggle("dark", systemTheme === "dark");
+      trackThemeToggle(systemTheme as "light" | "dark");
     } else {
       document.documentElement.classList.toggle("dark", newTheme === "dark");
+      trackThemeToggle(newTheme as "light" | "dark");
     }
     setIsOpen(false);
   };

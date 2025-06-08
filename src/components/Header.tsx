@@ -1,10 +1,15 @@
 import { Link, useLocation } from "react-router-dom";
+import { trackNavigation } from "@/lib/analytics";
 import { HPLogoIconWhite } from "./Icons";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const location = useLocation();
   const currentPath = location.pathname;
+
+  const handleNavClick = (destination: string) => {
+    trackNavigation(destination);
+  };
 
   const linkClasses = (path: string) =>
     `text-sm font-medium hover:underline underline-offset-4 ${
@@ -20,13 +25,13 @@ export default function Header() {
         <span className="sr-only">Henry Pendleton's Portfolio</span>
       </Link>
       <nav className="ml-auto flex items-center gap-4 sm:gap-6">
-        <Link className={linkClasses("/")} to="/">
+        <Link className={linkClasses("/")} to="/" onClick={() => handleNavClick("home")}>
           About
         </Link>
-        <Link className={linkClasses("/globe")} to="/globe">
+        <Link className={linkClasses("/globe")} to="/globe" onClick={() => handleNavClick("globe")}>
           Pin Map
         </Link>
-        <Link className={linkClasses("/contact")} to="/contact">
+        <Link className={linkClasses("/contact")} to="/contact" onClick={() => handleNavClick("contact")}>
           Contact
         </Link>
         <ThemeToggle />

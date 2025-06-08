@@ -50,6 +50,11 @@ VITE_SUPABASE_URL=your_supabase_url
 VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
 
+Required for Google Analytics GA4:
+```
+VITE_GA4_MEASUREMENT_ID=your_ga4_measurement_id
+```
+
 ### Database Schema
 
 The app uses two Supabase tables:
@@ -67,3 +72,4 @@ The project uses `@/` as an alias for `./src/` directory (configured in tsconfig
 3. **Dark Mode**: System preference detection with manual toggle
 4. **Animations**: AOS library for scroll animations
 5. **SEO**: react-helmet-async for meta tag management
+6. **Analytics**: Google Analytics GA4 integration with custom event tracking

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
+import { trackContactSubmission } from "@/lib/analytics";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -28,6 +29,7 @@ const ContactForm = () => {
       setError(error.message);
     } else {
       setSuccess(true);
+      trackContactSubmission();
       setName("");
       setEmail("");
       setMessage("");

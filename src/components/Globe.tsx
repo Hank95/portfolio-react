@@ -2,6 +2,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Globe from "react-globe.gl";
 import { supabase } from "@/lib/supabaseClient";
+import { trackGlobeInteraction } from "@/lib/analytics";
 import PinModal from "./PinModal";
 import { cities } from "@/data/cities";
 
@@ -33,7 +34,7 @@ const GlobeComponent: React.FC = () => {
     lng: number;
   } | null>(null);
 
-  const globeRef = useRef<any>();
+  const globeRef = useRef<any>(null);
 
   useEffect(() => {
     if (globeRef.current) {
@@ -61,11 +62,13 @@ const GlobeComponent: React.FC = () => {
     const { lat, lng } = event;
     setSelectedLocation({ lat, lng });
     setModalOpen(true);
+    trackGlobeInteraction("pin_clicked");
   };
 
   const handleSavePin = async (pin: Pin) => {
     setPins([...pins, pin]);
     await supabase.from("pins").insert([pin]);
+    trackGlobeInteraction("pin_created");
   };
 
   return (

@@ -1,12 +1,18 @@
 import React from "react";
 import { resume } from "../data/resume";
+import { trackResumeDownload } from "@/lib/analytics";
 import Section from "./Section";
 import ExperienceItem from "./ExperienceItem";
 import ProjectItem from "./ProjectItem";
 import PriorExperienceItem from "./PriorExprienceItem";
-import { FaGithub, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import { FaGithub, FaEnvelope, FaPhone, FaMapMarkerAlt, FaDownload } from "react-icons/fa";
 
 const Resume: React.FC = () => {
+  const handleDownload = () => {
+    trackResumeDownload();
+    window.print();
+  };
+
   return (
     <div className="max-w-4xl mx-auto p-8 bg-white shadow-lg rounded-lg">
       <header className="mb-8 text-center">
@@ -38,6 +44,13 @@ const Resume: React.FC = () => {
           {resume.title}
         </h2>
         <p className="text-gray-600">{resume.summary}</p>
+        <button
+          onClick={handleDownload}
+          className="mt-4 inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+        >
+          <FaDownload className="mr-2" />
+          Download Resume
+        </button>
       </header>
 
       <Section title="Technical Skills">
