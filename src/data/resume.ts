@@ -49,6 +49,18 @@ export const resume = {
   ],
   technicalProjects: [
     {
+      name: "Wedding Website",
+      github: "https://github.com/Hank95/wedding-site",
+      demo: "https://nobskaandhenry.com",
+      description: [
+        "Modern, elegant wedding website with custom sage and ivory color palette and complete RSVP management system.",
+        "Built with React 18, TypeScript, and Vite for optimal performance and developer experience.",
+        "Integrated Supabase for backend services including RSVP storage and automated email notifications via Edge Functions.",
+        "Features interactive Charleston activities map using Leaflet, photo gallery with lazy loading, and calendar integration.",
+        "Implemented responsive design with Tailwind CSS v4, accessibility compliance, and SEO optimization achieving 95+ Lighthouse score.",
+      ],
+    },
+    {
       name: "Ahoy",
       github: "https://github.com/your-profile/ahoy",
       demo: "https://ahoy-demo.com",
