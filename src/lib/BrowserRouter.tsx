@@ -2,6 +2,7 @@ import { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import ErrorPage from "../pages/errorPage";
+import PageLoader from "../components/PageLoader";
 
 const Home = lazy(() => import("../pages/Home"));
 const ResumePage = lazy(() => import("../pages/ResumePage"));
@@ -17,7 +18,7 @@ export const BrowserRouter = createBrowserRouter([
       {
         index: true,
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<PageLoader text="Loading home..." />}>
             <Home />
           </Suspense>
         ),
@@ -25,7 +26,7 @@ export const BrowserRouter = createBrowserRouter([
       {
         path: "resume",
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<PageLoader text="Loading resume..." />}>
             <ResumePage />
           </Suspense>
         ),
@@ -33,7 +34,7 @@ export const BrowserRouter = createBrowserRouter([
       {
         path: "globe",
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<PageLoader text="Loading globe..." />}>
             <GlobePage />
           </Suspense>
         ),
@@ -41,7 +42,7 @@ export const BrowserRouter = createBrowserRouter([
       {
         path: "contact",
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<PageLoader text="Loading contact..." />}>
             <Contact />
           </Suspense>
         ),

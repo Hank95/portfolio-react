@@ -1,8 +1,11 @@
 // src/pages/GlobePage.tsx
-import React, { useState, useEffect } from "react";
-import GlobeComponent from "@/components/Globe";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import WelcomeModal from "@/components/WelcomeModal";
 import { Helmet } from "react-helmet-async";
+import LoadingSpinner from "@/components/LoadingSpinner";
+
+// Lazy load the heavy Globe component
+const GlobeComponent = lazy(() => import("@/components/Globe"));
 
 const GlobePage: React.FC = () => {
   const [isWelcomeModalOpen, setIsWelcomeModalOpen] = useState(true);
@@ -54,7 +57,13 @@ const GlobePage: React.FC = () => {
         />
         <meta name="twitter:image" content="URL to your image" />
       </Helmet>
-      <GlobeComponent />
+      <Suspense fallback={
+        <div className="flex items-center justify-center min-h-screen">
+          <LoadingSpinner size="lg" text="Loading interactive globe..." />
+        </div>
+      }>
+        <GlobeComponent />
+      </Suspense>
       <WelcomeModal
         isOpen={isWelcomeModalOpen}
         onClose={handleCloseWelcomeModal}

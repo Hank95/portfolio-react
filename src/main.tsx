@@ -5,6 +5,17 @@ import { RouterProvider } from "react-router-dom";
 import { BrowserRouter } from "./lib/BrowserRouter.tsx";
 import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from "./context/ThemeContext.tsx";
+import { registerSW } from "./lib/serviceWorker";
+import { performanceMonitor } from "./lib/performanceMonitor";
+
+// Initialize performance monitoring
+if (typeof window !== 'undefined') {
+  // Start performance monitoring
+  performanceMonitor;
+  
+  // Register service worker
+  registerSW();
+}
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

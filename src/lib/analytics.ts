@@ -73,3 +73,19 @@ export const trackThemeToggle = (theme: "light" | "dark") => {
 export const trackNavigation = (destination: string) => {
   trackEvent("navigate", "navigation", destination);
 };
+
+// Track performance metrics
+export const trackPerformanceMetric = (
+  metricName: string,
+  value: number,
+  rating?: 'good' | 'needs-improvement' | 'poor'
+) => {
+  if (typeof window !== "undefined" && window.gtag && GA_MEASUREMENT_ID) {
+    window.gtag("event", "web_vitals", {
+      event_category: "Performance",
+      event_label: metricName,
+      value: Math.round(value),
+      custom_parameter_1: rating || 'unknown',
+    });
+  }
+};

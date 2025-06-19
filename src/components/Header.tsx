@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { trackNavigation } from "@/lib/analytics";
 import { HPLogoIconWhite } from "./Icons";
 import ThemeToggle from "./ThemeToggle";
+import RoutePreloader from "./RoutePreloader";
 
 export default function Header() {
   const location = useLocation();
@@ -25,15 +26,21 @@ export default function Header() {
         <span className="sr-only">Henry Pendleton's Portfolio</span>
       </Link>
       <nav className="ml-auto flex items-center gap-4 sm:gap-6">
-        <Link className={linkClasses("/")} to="/" onClick={() => handleNavClick("home")}>
-          About
-        </Link>
-        <Link className={linkClasses("/globe")} to="/globe" onClick={() => handleNavClick("globe")}>
-          Pin Map
-        </Link>
-        <Link className={linkClasses("/contact")} to="/contact" onClick={() => handleNavClick("contact")}>
-          Contact
-        </Link>
+        <RoutePreloader to="/" hoverPreload={true}>
+          <Link className={linkClasses("/")} to="/" onClick={() => handleNavClick("home")}>
+            About
+          </Link>
+        </RoutePreloader>
+        <RoutePreloader to="/globe" hoverPreload={true}>
+          <Link className={linkClasses("/globe")} to="/globe" onClick={() => handleNavClick("globe")}>
+            Pin Map
+          </Link>
+        </RoutePreloader>
+        <RoutePreloader to="/contact" hoverPreload={true}>
+          <Link className={linkClasses("/contact")} to="/contact" onClick={() => handleNavClick("contact")}>
+            Contact
+          </Link>
+        </RoutePreloader>
         <ThemeToggle />
       </nav>
     </header>

@@ -16,8 +16,6 @@ import {
   ArrowRightIcon,
 } from "@/components/Icons.tsx";
 import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import headShot from "/head_shot@0.5x.webp";
 import { Link } from "react-router-dom";
 import ContactForm from "@/components/ContactsForm";
@@ -25,12 +23,19 @@ import { Helmet } from "react-helmet-async";
 
 export default function Home() {
   useEffect(() => {
-    AOS.init({
-      once: true,
-      //   disable: "phone",
-      duration: 700,
-      easing: "ease-out-cubic",
-    });
+    // Dynamically import AOS only when needed
+    const initAOS = async () => {
+      const AOS = await import('aos');
+      await import('aos/dist/aos.css');
+      
+      AOS.default.init({
+        once: true,
+        duration: 700,
+        easing: "ease-out-cubic",
+      });
+    };
+    
+    initAOS();
   }, []);
 
   return (
