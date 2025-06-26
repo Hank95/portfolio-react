@@ -398,6 +398,100 @@ export default function Home() {
               >
                 <CardHeader>
                   <CardTitle className="text-[#4d6e5e] dark:text-[#a8d5ba]">
+                    ListLive
+                  </CardTitle>
+                  <CardDescription className="dark:text-gray-400">
+                    iOS App | Live on App Store
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="list-disc list-inside m-4 space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                    <li className="text-gray-800 dark:text-gray-300">
+                      Modern iOS grocery shopping app built with SwiftUI that makes shopping smarter, faster, and more collaborative
+                    </li>
+                    <li className="text-gray-800 dark:text-gray-300">
+                      Features smart shopping mode with progress tracking, celebration effects, and intelligent auto-categorization of items
+                    </li>
+                    <li className="text-gray-800 dark:text-gray-300">
+                      Implements CloudKit sharing for real-time collaboration, allowing family and friends to share and sync lists across devices
+                    </li>
+                    <li className="text-gray-800 dark:text-gray-300">
+                      Built with SwiftUI, Core Data, and CloudKit using MVVM architecture for clean separation of concerns
+                    </li>
+                    <li className="text-gray-800 dark:text-gray-300">
+                      Includes comprehensive undo system, haptic feedback, item suggestions, and engaging onboarding experience
+                    </li>
+                  </ul>
+                  <div className="mt-6 space-y-4">
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 text-xs font-medium rounded-full bg-[#4d6e5e]/10 text-[#4d6e5e] dark:bg-[#a8d5ba]/10 dark:text-[#a8d5ba]">
+                        SwiftUI
+                      </span>
+                      <span className="px-3 py-1 text-xs font-medium rounded-full bg-[#4d6e5e]/10 text-[#4d6e5e] dark:bg-[#a8d5ba]/10 dark:text-[#a8d5ba]">
+                        Core Data
+                      </span>
+                      <span className="px-3 py-1 text-xs font-medium rounded-full bg-[#4d6e5e]/10 text-[#4d6e5e] dark:bg-[#a8d5ba]/10 dark:text-[#a8d5ba]">
+                        CloudKit
+                      </span>
+                      <span className="px-3 py-1 text-xs font-medium rounded-full bg-[#4d6e5e]/10 text-[#4d6e5e] dark:bg-[#a8d5ba]/10 dark:text-[#a8d5ba]">
+                        MVVM
+                      </span>
+                      <span className="px-3 py-1 text-xs font-medium rounded-full bg-[#4d6e5e]/10 text-[#4d6e5e] dark:bg-[#a8d5ba]/10 dark:text-[#a8d5ba]">
+                        iOS 17+
+                      </span>
+                      <span className="px-3 py-1 text-xs font-medium rounded-full bg-[#4d6e5e]/10 text-[#4d6e5e] dark:bg-[#a8d5ba]/10 dark:text-[#a8d5ba]">
+                        Combine
+                      </span>
+                    </div>
+                    <div className="flex gap-4">
+                      <a
+                        href="https://listliveapp.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-md bg-[#4d6e5e] text-white hover:bg-[#4d6e5e]/90 dark:bg-[#a8d5ba] dark:text-gray-800 dark:hover:bg-[#a8d5ba]/90 transition-colors"
+                      >
+                        Website
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                          />
+                        </svg>
+                      </a>
+                      <a
+                        href="https://apps.apple.com/app/listlive/id6747406731"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-md border border-[#4d6e5e] text-[#4d6e5e] hover:bg-[#4d6e5e]/10 dark:border-[#a8d5ba] dark:text-[#a8d5ba] dark:hover:bg-[#a8d5ba]/10 transition-colors"
+                      >
+                        App Store
+                        <svg
+                          className="w-4 h-4"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card
+                className="border-[#4d6e5e] dark:border-[#a8d5ba] shadow-lg opacity-0 -translate-x-10 transition-all duration-700"
+                data-aos="fade-left"
+              >
+                <CardHeader>
+                  <CardTitle className="text-[#4d6e5e] dark:text-[#a8d5ba]">
                     Wedding Website
                   </CardTitle>
                   <CardDescription className="dark:text-gray-400">

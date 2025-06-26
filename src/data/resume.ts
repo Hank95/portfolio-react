@@ -8,7 +8,7 @@ export const resume = {
   summary:
     "Software engineer experienced in front-end and back-end technologies. With a background in sales and finance, I bring strong analytical and communication skills. My passion to create and problem solve, matched with a knack for learning quickly, makes me a great addition to any team.",
   technicalSkills: {
-    languages: ["JavaScript", "TypeScript", "Ruby"],
+    languages: ["JavaScript", "TypeScript", "Ruby", "Swift"],
     webDevelopment: [
       "React",
       "Next.js",
@@ -18,7 +18,7 @@ export const resume = {
       "Node.js",
     ],
     databases: ["SQL", "PostgreSQL"],
-    cloudServices: ["AWS (S3, Lambda)", "Firebase"],
+    cloudServices: ["AWS (S3, Lambda)", "Firebase", "CloudKit"],
     containers: ["Docker"],
   },
   professionalExperience: [
@@ -48,6 +48,18 @@ export const resume = {
     },
   ],
   technicalProjects: [
+    {
+      name: "ListLive",
+      demo: "https://apps.apple.com/app/listlive/id6747406731",
+      website: "https://listliveapp.com/",
+      description: [
+        "Modern iOS grocery shopping app built with SwiftUI that makes shopping smarter, faster, and more collaborative.",
+        "Features smart shopping mode with progress tracking, celebration effects, and intelligent auto-categorization of items.",
+        "Implements CloudKit sharing for real-time collaboration, allowing family and friends to share and sync lists across devices.",
+        "Built with SwiftUI, Core Data, and CloudKit using MVVM architecture for clean separation of concerns.",
+        "Includes comprehensive undo system, haptic feedback, item suggestions, and engaging onboarding experience.",
+      ],
+    },
     {
       name: "Wedding Website",
       github: "https://github.com/Hank95/wedding-site",
