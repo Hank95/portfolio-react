@@ -17,29 +17,19 @@ import {
   ArrowRightIcon,
   AppleIcon,
 } from "@/components/Icons";
-import { useEffect } from "react";
 import headShot from "/head_shot@0.5x.webp";
 import { Link } from "react-router-dom";
 import ContactForm from "@/components/ContactsForm";
 import { Helmet } from "react-helmet-async";
+import { useFadeUp } from "@/hooks/useScrollAnimation";
 
 export default function Home() {
-  useEffect(() => {
-    // Dynamically import AOS only when needed
-    const initAOS = async () => {
-      const AOS = await import("aos");
-      await import("aos/dist/aos.css");
-
-      AOS.default.init({
-        once: true,
-        duration: 700,
-        easing: "ease-out-cubic",
-      });
-    };
-
-    initAOS();
-  }, []);
-
+  // Animation refs
+  const aboutRef = useFadeUp();
+  const experienceRef = useFadeUp();
+  const skillsRef = useFadeUp();
+  const projectsRef = useFadeUp();
+  const contactRef = useFadeUp();
   return (
     <div className="flex flex-col min-h-[100dvh] ">
       <Helmet>
@@ -54,7 +44,6 @@ export default function Home() {
         />
         <meta name="author" content="Henry Pendleton" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
         <meta property="og:title" content="Home - Henry Pendleton" />
         <meta
           property="og:description"
@@ -63,7 +52,6 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://henrypendleton.netlify.app/" />
         <meta property="og:image" content="URL to your image" />
-
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Home - Henry Pendleton" />
         <meta
@@ -72,11 +60,10 @@ export default function Home() {
         />
         <meta name="twitter:image" content="URL to your image" />
       </Helmet>
-
       <main className="flex-1 justify-center items-center bg-gray-50 dark:bg-gray-800">
         <section
-          className="w-full py-12 md:py-24 lg:py-32  px-12 opacity-0 translate-y-10 transition-all duration-700"
-          data-aos="fade-up"
+          ref={aboutRef}
+          className="w-full py-12 md:py-24 lg:py-32  px-12"
           id="about"
         >
           <div className="px-4 md:px-6">
@@ -103,8 +90,7 @@ export default function Home() {
               </div>
               <img
                 alt="Henry Pendleton"
-                className="mx-auto aspect-square overflow-hidden rounded-full object-cover sm:w-full opacity-0 translate-x-10 transition-all duration-700"
-                data-aos="fade-left"
+                className="mx-auto aspect-square overflow-hidden rounded-full object-cover sm:w-full "
                 height="550"
                 src={headShot}
                 width="550"
@@ -113,8 +99,8 @@ export default function Home() {
           </div>
         </section>
         <section
-          className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800 opacity-0 translate-y-10 transition-all duration-700"
-          data-aos="fade-up"
+          ref={experienceRef}
+          className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800"
           id="experience"
         >
           <div className="px-4 md:px-6">
@@ -128,10 +114,7 @@ export default function Home() {
               </p>
             </div>
             <div className="mt-8 grid gap-6">
-              <Card
-                className="border-[#4d6e5e] dark:border-[#a8d5ba] shadow-lg opacity-0 translate-x-10 transition-all duration-700"
-                data-aos="fade-right"
-              >
+              <Card className="border-[#4d6e5e] dark:border-[#a8d5ba] shadow-lg ">
                 <CardHeader>
                   <CardTitle className="text-[#4d6e5e] dark:text-[#a8d5ba]">
                     Lead Frontend Developer
@@ -197,8 +180,8 @@ export default function Home() {
           </div>
         </section>
         <section
-          className="w-full py-12 md:py-24 lg:py-32 opacity-0 translate-y-10 transition-all duration-700"
-          data-aos="fade-up"
+          ref={skillsRef}
+          className="w-full py-12 md:py-24 lg:py-32"
           id="skills"
         >
           <div className="px-4 md:px-6">
@@ -211,10 +194,7 @@ export default function Home() {
               </p>
             </div>
             <div className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
-              <div
-                className="flex flex-col items-center space-y-2 opacity-0 translate-x-10 transition-all duration-700"
-                data-aos="fade-right"
-              >
+              <div className="flex flex-col items-center space-y-2 ">
                 <ComponentIcon className="h-12 w-12 text-[#4d6e5e] dark:text-[#a8d5ba]" />
                 <div className="text-center">
                   <h3 className="text-lg font-semibold text-[#4d6e5e] dark:text-[#a8d5ba]">
@@ -225,11 +205,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div
-                className="flex flex-col items-center space-y-2 opacity-0 translate-x-10 transition-all duration-700"
-                data-aos="fade-right"
-                data-aos-delay="100"
-              >
+              <div className="flex flex-col items-center space-y-2 ">
                 <NetworkIcon className="h-12 w-12 text-[#4d6e5e] dark:text-[#a8d5ba]" />
                 <div className="text-center">
                   <h3 className="text-lg font-semibold text-[#4d6e5e] dark:text-[#a8d5ba]">
@@ -240,11 +216,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div
-                className="flex flex-col items-center space-y-2 opacity-0 translate-x-10 transition-all duration-700"
-                data-aos="fade-right"
-                data-aos-delay="200"
-              >
+              <div className="flex flex-col items-center space-y-2 ">
                 <DatabaseIcon className="h-12 w-12 text-[#4d6e5e] dark:text-[#a8d5ba]" />
                 <div className="text-center">
                   <h3 className="text-lg font-semibold text-[#4d6e5e] dark:text-[#a8d5ba]">
@@ -255,11 +227,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div
-                className="flex flex-col items-center space-y-2 opacity-0 translate-x-10 transition-all duration-700"
-                data-aos="fade-right"
-                data-aos-delay="250"
-              >
+              <div className="flex flex-col items-center space-y-2 ">
                 <DatabaseIcon className="h-12 w-12 text-[#4d6e5e] dark:text-[#a8d5ba]" />
                 <div className="text-center">
                   <h3 className="text-lg font-semibold text-[#4d6e5e] dark:text-[#a8d5ba]">
@@ -270,11 +238,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div
-                className="flex flex-col items-center space-y-2 opacity-0 translate-x-10 transition-all duration-700"
-                data-aos="fade-right"
-                data-aos-delay="300"
-              >
+              <div className="flex flex-col items-center space-y-2 ">
                 <CloudIcon className="h-12 w-12 text-[#4d6e5e] dark:text-[#a8d5ba]" />
                 <div className="text-center">
                   <h3 className="text-lg font-semibold text-[#4d6e5e] dark:text-[#a8d5ba]">
@@ -285,11 +249,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div
-                className="flex flex-col items-center space-y-2 opacity-0 translate-x-10 transition-all duration-700"
-                data-aos="fade-right"
-                data-aos-delay="350"
-              >
+              <div className="flex flex-col items-center space-y-2 ">
                 <DatabaseIcon className="h-12 w-12 text-[#4d6e5e] dark:text-[#a8d5ba]" />
                 <div className="text-center">
                   <h3 className="text-lg font-semibold text-[#4d6e5e] dark:text-[#a8d5ba]">
@@ -300,11 +260,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div
-                className="flex flex-col items-center space-y-2 opacity-0 -translate-x-10 transition-all duration-700"
-                data-aos="fade-left"
-                data-aos-delay="100"
-              >
+              <div className="flex flex-col items-center space-y-2">
                 <WindIcon className="h-12 w-12 text-[#4d6e5e] dark:text-[#a8d5ba]" />
                 <div className="text-center">
                   <h3 className="text-lg font-semibold text-[#4d6e5e] dark:text-[#a8d5ba]">
@@ -315,11 +271,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div
-                className="flex flex-col items-center space-y-2 opacity-0 -translate-x-10 transition-all duration-700"
-                data-aos="fade-left"
-                data-aos-delay="200"
-              >
+              <div className="flex flex-col items-center space-y-2">
                 <GitGraphIcon className="h-12 w-12 text-[#4d6e5e] dark:text-[#a8d5ba]" />
                 <div className="text-center">
                   <h3 className="text-lg font-semibold text-[#4d6e5e] dark:text-[#a8d5ba]">
@@ -330,11 +282,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div
-                className="flex flex-col items-center space-y-2 opacity-0 -translate-x-10 transition-all duration-700"
-                data-aos="fade-left"
-                data-aos-delay="300"
-              >
+              <div className="flex flex-col items-center space-y-2">
                 <TypeIcon className="h-12 w-12 text-[#4d6e5e] dark:text-[#a8d5ba]" />
                 <div className="text-center">
                   <h3 className="text-lg font-semibold text-[#4d6e5e] dark:text-[#a8d5ba]">
@@ -345,11 +293,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div
-                className="flex flex-col items-center space-y-2 opacity-0 -translate-x-10 transition-all duration-700"
-                data-aos="fade-left"
-                data-aos-delay="400"
-              >
+              <div className="flex flex-col items-center space-y-2">
                 <ArrowRightIcon className="h-12 w-12 text-[#4d6e5e] dark:text-[#a8d5ba]" />
                 <div className="text-center">
                   <h3 className="text-lg font-semibold text-[#4d6e5e] dark:text-[#a8d5ba]">
@@ -360,11 +304,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div
-                className="flex flex-col items-center space-y-2 opacity-0 -translate-x-10 transition-all duration-700"
-                data-aos="fade-left"
-                data-aos-delay="500"
-              >
+              <div className="flex flex-col items-center space-y-2">
                 <ComponentIcon className="h-12 w-12 text-[#4d6e5e] dark:text-[#a8d5ba]" />
                 <div className="text-center">
                   <h3 className="text-lg font-semibold text-[#4d6e5e] dark:text-[#a8d5ba]">
@@ -379,8 +319,8 @@ export default function Home() {
           </div>
         </section>
         <section
-          className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800 opacity-0 translate-y-10 transition-all duration-700"
-          data-aos="fade-up"
+          ref={projectsRef}
+          className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800"
           id="projects"
         >
           <div className="px-4 md:px-6">
@@ -394,10 +334,7 @@ export default function Home() {
               </p>
             </div>
             <div className="mt-8 grid gap-6">
-              <Card
-                className="border-[#4d6e5e] dark:border-[#a8d5ba] shadow-lg opacity-0 -translate-x-10 transition-all duration-700"
-                data-aos="fade-left"
-              >
+              <Card className="border-[#4d6e5e] dark:border-[#a8d5ba] shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-[#4d6e5e] dark:text-[#a8d5ba]">
                     ListLive
@@ -485,10 +422,7 @@ export default function Home() {
                   </div>
                 </CardContent>
               </Card>
-              <Card
-                className="border-[#4d6e5e] dark:border-[#a8d5ba] shadow-lg opacity-0 -translate-x-10 transition-all duration-700"
-                data-aos="fade-left"
-              >
+              <Card className="border-[#4d6e5e] dark:border-[#a8d5ba] shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-[#4d6e5e] dark:text-[#a8d5ba]">
                     Wedding Website
@@ -583,17 +517,14 @@ export default function Home() {
                           viewBox="0 0 24 24"
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                         </svg>
                       </a>
                     </div>
                   </div>
                 </CardContent>
               </Card>
-              <Card
-                className="border-[#4d6e5e] dark:border-[#a8d5ba] shadow-lg opacity-0 -translate-x-10 transition-all duration-700"
-                data-aos="fade-left"
-              >
+              <Card className="border-[#4d6e5e] dark:border-[#a8d5ba] shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-[#4d6e5e] dark:text-[#a8d5ba]">
                     F1 Data Visualization Dashboard
@@ -684,17 +615,14 @@ export default function Home() {
                           viewBox="0 0 24 24"
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.30 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                         </svg>
                       </a>
                     </div>
                   </div>
                 </CardContent>
               </Card>
-              <Card
-                className="border-[#4d6e5e] dark:border-[#a8d5ba] shadow-lg opacity-0 translate-x-10 transition-all duration-700"
-                data-aos="fade-right"
-              >
+              <Card className="border-[#4d6e5e] dark:border-[#a8d5ba] shadow-lg ">
                 <CardHeader>
                   <CardTitle className="text-[#4d6e5e] dark:text-[#a8d5ba]">
                     TreasureMap - Community-Based Treasure Hunt App
@@ -724,8 +652,8 @@ export default function Home() {
           </div>
         </section>
         <section
-          className="w-full py-12 md:py-24 lg:py-32 opacity-0 translate-y-10 transition-all duration-700"
-          data-aos="fade-up"
+          ref={contactRef}
+          className="w-full py-12 md:py-24 lg:py-32"
           id="contact"
         >
           <ContactForm />

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import { trackContactSubmission } from "@/lib/analytics";
 import { Label } from "@/components/ui/label";
