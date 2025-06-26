@@ -25,16 +25,16 @@ export default function Home() {
   useEffect(() => {
     // Dynamically import AOS only when needed
     const initAOS = async () => {
-      const AOS = await import('aos');
-      await import('aos/dist/aos.css');
-      
+      const AOS = await import("aos");
+      await import("aos/dist/aos.css");
+
       AOS.default.init({
         once: true,
         duration: 700,
         easing: "ease-out-cubic",
       });
     };
-    
+
     initAOS();
   }, []);
 
@@ -407,19 +407,26 @@ export default function Home() {
                 <CardContent>
                   <ul className="list-disc list-inside m-4 space-y-2 text-sm text-gray-500 dark:text-gray-400">
                     <li className="text-gray-800 dark:text-gray-300">
-                      Modern iOS grocery shopping app built with SwiftUI that makes shopping smarter, faster, and more collaborative
+                      Modern iOS grocery shopping app built with SwiftUI that
+                      makes shopping smarter, faster, and more collaborative
                     </li>
                     <li className="text-gray-800 dark:text-gray-300">
-                      Features smart shopping mode with progress tracking, celebration effects, and intelligent auto-categorization of items
+                      Features smart shopping mode with progress tracking,
+                      celebration effects, and intelligent auto-categorization
+                      of items
                     </li>
                     <li className="text-gray-800 dark:text-gray-300">
-                      Implements CloudKit sharing for real-time collaboration, allowing family and friends to share and sync lists across devices
+                      Implements CloudKit sharing for real-time collaboration,
+                      allowing family and friends to share and sync lists across
+                      devices
                     </li>
                     <li className="text-gray-800 dark:text-gray-300">
-                      Built with SwiftUI, Core Data, and CloudKit using MVVM architecture for clean separation of concerns
+                      Built with SwiftUI, Core Data, and CloudKit using MVVM
+                      architecture for clean separation of concerns
                     </li>
                     <li className="text-gray-800 dark:text-gray-300">
-                      Includes comprehensive undo system, haptic feedback, item suggestions, and engaging onboarding experience
+                      Includes comprehensive undo system, haptic feedback, item
+                      suggestions, and engaging onboarding experience
                     </li>
                   </ul>
                   <div className="mt-6 space-y-4">
@@ -438,9 +445,6 @@ export default function Home() {
                       </span>
                       <span className="px-3 py-1 text-xs font-medium rounded-full bg-[#4d6e5e]/10 text-[#4d6e5e] dark:bg-[#a8d5ba]/10 dark:text-[#a8d5ba]">
                         iOS 17+
-                      </span>
-                      <span className="px-3 py-1 text-xs font-medium rounded-full bg-[#4d6e5e]/10 text-[#4d6e5e] dark:bg-[#a8d5ba]/10 dark:text-[#a8d5ba]">
-                        Combine
                       </span>
                     </div>
                     <div className="flex gap-4">
@@ -479,7 +483,7 @@ export default function Home() {
                           viewBox="0 0 24 24"
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
                         </svg>
                       </a>
                     </div>
@@ -501,19 +505,27 @@ export default function Home() {
                 <CardContent>
                   <ul className="list-disc list-inside m-4 space-y-2 text-sm text-gray-500 dark:text-gray-400">
                     <li className="text-gray-800 dark:text-gray-300">
-                      Modern, elegant wedding website with custom sage and ivory color palette and complete RSVP management system
+                      Modern, elegant wedding website with custom sage and ivory
+                      color palette and complete RSVP management system
                     </li>
                     <li className="text-gray-800 dark:text-gray-300">
-                      Built with React 18, TypeScript, and Vite for optimal performance and developer experience
+                      Built with React 18, TypeScript, and Vite for optimal
+                      performance and developer experience
                     </li>
                     <li className="text-gray-800 dark:text-gray-300">
-                      Integrated Supabase for backend services including RSVP storage and automated email notifications via Edge Functions
+                      Integrated Supabase for backend services including RSVP
+                      storage and automated email notifications via Edge
+                      Functions
                     </li>
                     <li className="text-gray-800 dark:text-gray-300">
-                      Features interactive Charleston activities map using Leaflet, photo gallery with lazy loading, and calendar integration
+                      Features interactive Charleston activities map using
+                      Leaflet, photo gallery with lazy loading, and calendar
+                      integration
                     </li>
                     <li className="text-gray-800 dark:text-gray-300">
-                      Implemented responsive design with Tailwind CSS v4, accessibility compliance, and SEO optimization achieving 95+ Lighthouse score
+                      Implemented responsive design with Tailwind CSS v4,
+                      accessibility compliance, and SEO optimization achieving
+                      95+ Lighthouse score
                     </li>
                   </ul>
                   <div className="mt-6 space-y-4">
@@ -576,7 +588,7 @@ export default function Home() {
                           viewBox="0 0 24 24"
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                         </svg>
                       </a>
                     </div>
@@ -598,19 +610,23 @@ export default function Home() {
                 <CardContent>
                   <ul className="list-disc list-inside m-4 space-y-2 text-sm text-gray-500 dark:text-gray-400">
                     <li className="text-gray-800 dark:text-gray-300">
-                      Real-time Formula 1 championship standings and race analytics using Jolpica API
+                      Real-time Formula 1 championship standings and race
+                      analytics using Jolpica API
                     </li>
                     <li className="text-gray-800 dark:text-gray-300">
-                      Interactive data visualizations with React 19, TypeScript, and TanStack Router
+                      Interactive data visualizations with React 19, TypeScript,
+                      and TanStack Router
                     </li>
                     <li className="text-gray-800 dark:text-gray-300">
                       Live telemetry simulation and advanced performance metrics
                     </li>
                     <li className="text-gray-800 dark:text-gray-300">
-                      Modern responsive design with Tailwind CSS and professional UX
+                      Modern responsive design with Tailwind CSS and
+                      professional UX
                     </li>
                     <li className="text-gray-800 dark:text-gray-300">
-                      Production deployment with automated CI/CD and performance optimization
+                      Production deployment with automated CI/CD and performance
+                      optimization
                     </li>
                   </ul>
                   <div className="mt-6 space-y-4">
@@ -673,7 +689,7 @@ export default function Home() {
                           viewBox="0 0 24 24"
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.30 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.30 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                         </svg>
                       </a>
                     </div>
