@@ -3,9 +3,10 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 interface Project {
   name: string;
-  github: string;
-  demo: string;
   description: string[];
+  demo: string;
+  github?: string;
+  website?: string;
 }
 
 interface ProjectItemProps {
