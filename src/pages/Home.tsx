@@ -15,7 +15,7 @@ import {
   TypeIcon,
   ArrowRightIcon,
   AppleIcon,
-} from "@/components/Icons.tsx";
+} from "@/components/Icons";
 import { useEffect } from "react";
 import headShot from "/head_shot@0.5x.webp";
 import { Link } from "react-router-dom";
