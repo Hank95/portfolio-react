@@ -1,4 +1,5 @@
 // src/pages/Contact.tsx
+import React from "react";
 import ContactForm from "@/components/ContactsForm";
 import { Helmet } from "react-helmet-async";
 

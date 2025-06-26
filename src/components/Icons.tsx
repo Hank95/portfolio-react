@@ -1,4 +1,4 @@
-import { JSX, SVGProps } from "react";
+import type { JSX, SVGProps } from "react";
 
 function ArrowRightIcon(
   props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>

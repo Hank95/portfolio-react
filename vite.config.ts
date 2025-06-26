@@ -9,11 +9,21 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  define: {
+    'process.env': {}
+  },
   css: {
     postcss: "./postcss.config.js",
   },
   build: {
     rollupOptions: {
+      onwarn(warning, warn) {
+        // Suppress "Module level directives cause errors when bundled" warnings
+        if (warning.code === 'MODULE_LEVEL_DIRECTIVE') {
+          return;
+        }
+        warn(warning);
+      },
       output: {
         manualChunks: (id) => {
           // Three.js and heavy 3D libraries - completely separate
@@ -41,6 +51,10 @@ export default defineConfig({
               id.includes('node_modules/react-icons') || 
               id.includes('node_modules/aos')) {
             return 'icons';
+          }
+          // Custom Icons component should be with vendor to avoid initialization issues
+          if (id.includes('src/components/Icons')) {
+            return 'vendor';
           }
           // Utilities
           if (id.includes('node_modules/clsx') || 
@@ -81,10 +95,11 @@ export default defineConfig({
       'clsx',
       'tailwind-merge'
     ],
-    exclude: [
-      'three',
-      'react-globe.gl'
-    ],
+    exclude: [],
+    force: true,
+    esbuildOptions: {
+      target: 'esnext'
+    }
   },
   // Server configuration for compression
   server: {
