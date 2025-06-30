@@ -49,6 +49,18 @@ export const resume = {
   ],
   technicalProjects: [
     {
+      name: "CribScore",
+      demo: "https://apps.apple.com/us/app/cribscore/id6747778251",
+      website: "https://cribscoreapp.henrypendleton.com/",
+      description: [
+        "Modern iOS app for keeping score in cribbage games, built with SwiftUI and Core Data.",
+        "Features custom score dial interface with intuitive circular dial for selecting points (1-29 range).",
+        "Dual player support with customizable names and colors, plus game history with persistent storage.",
+        "Implements player statistics tracking wins, losses, and average scores with Core Data architecture.",
+        "Includes multiple background themes, haptic feedback, and immersive game mode with circular progress bars.",
+      ],
+    },
+    {
       name: "ListLive",
       demo: "https://apps.apple.com/app/listlive/id6747406731",
       website: "https://listliveapp.com/",

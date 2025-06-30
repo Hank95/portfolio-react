@@ -425,6 +425,87 @@ export default function Home() {
               <Card className="border-[#4d6e5e] dark:border-[#a8d5ba] shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-[#4d6e5e] dark:text-[#a8d5ba]">
+                    CribScore
+                  </CardTitle>
+                  <CardDescription className="dark:text-gray-400">
+                    iOS App | Live on App Store
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="list-disc list-inside m-4 space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                    <li className="text-gray-800 dark:text-gray-300">
+                      Modern iOS app for keeping score in cribbage games, built with SwiftUI and Core Data
+                    </li>
+                    <li className="text-gray-800 dark:text-gray-300">
+                      Features custom score dial interface with intuitive circular dial for selecting points (1-29 range)
+                    </li>
+                    <li className="text-gray-800 dark:text-gray-300">
+                      Dual player support with customizable names and colors, plus game history with persistent storage
+                    </li>
+                    <li className="text-gray-800 dark:text-gray-300">
+                      Implements player statistics tracking wins, losses, and average scores with Core Data architecture
+                    </li>
+                    <li className="text-gray-800 dark:text-gray-300">
+                      Includes multiple background themes, haptic feedback, and immersive game mode with circular progress bars
+                    </li>
+                  </ul>
+                  <div className="mt-6 space-y-4">
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 text-xs font-medium rounded-full bg-[#4d6e5e]/10 text-[#4d6e5e] dark:bg-[#a8d5ba]/10 dark:text-[#a8d5ba]">
+                        SwiftUI
+                      </span>
+                      <span className="px-3 py-1 text-xs font-medium rounded-full bg-[#4d6e5e]/10 text-[#4d6e5e] dark:bg-[#a8d5ba]/10 dark:text-[#a8d5ba]">
+                        Core Data
+                      </span>
+                      <span className="px-3 py-1 text-xs font-medium rounded-full bg-[#4d6e5e]/10 text-[#4d6e5e] dark:bg-[#a8d5ba]/10 dark:text-[#a8d5ba]">
+                        MVVM
+                      </span>
+                      <span className="px-3 py-1 text-xs font-medium rounded-full bg-[#4d6e5e]/10 text-[#4d6e5e] dark:bg-[#a8d5ba]/10 dark:text-[#a8d5ba]">
+                        iOS 17+
+                      </span>
+                      <span className="px-3 py-1 text-xs font-medium rounded-full bg-[#4d6e5e]/10 text-[#4d6e5e] dark:bg-[#a8d5ba]/10 dark:text-[#a8d5ba]">
+                        Haptic Feedback
+                      </span>
+                    </div>
+                    <div className="flex gap-4">
+                      <a
+                        href="https://cribscoreapp.henrypendleton.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-md bg-[#4d6e5e] text-white hover:bg-[#4d6e5e]/90 dark:bg-[#a8d5ba] dark:text-gray-800 dark:hover:bg-[#a8d5ba]/90 transition-colors"
+                      >
+                        Website
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                          />
+                        </svg>
+                      </a>
+                      <a
+                        href="https://apps.apple.com/us/app/cribscore/id6747778251"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-md border border-[#4d6e5e] text-[#4d6e5e] hover:bg-[#4d6e5e]/10 dark:border-[#a8d5ba] dark:text-[#a8d5ba] dark:hover:bg-[#a8d5ba]/10 transition-colors"
+                      >
+                        App Store
+                        <AppleIcon className="w-4 h-4" />
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card className="border-[#4d6e5e] dark:border-[#a8d5ba] shadow-lg">
+                <CardHeader>
+                  <CardTitle className="text-[#4d6e5e] dark:text-[#a8d5ba]">
                     Wedding Website
                   </CardTitle>
                   <CardDescription className="dark:text-gray-400">
