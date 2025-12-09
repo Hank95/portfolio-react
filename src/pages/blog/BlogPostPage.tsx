@@ -119,12 +119,12 @@ export default function BlogPostPage() {
               )}
             </header>
 
-            <div ref={contentRef} className="lg:grid lg:grid-cols-[1fr_250px] lg:gap-12">
-              <div>
+            <div ref={contentRef} className="lg:grid lg:grid-cols-[1fr_220px] lg:gap-8 xl:gap-12">
+              <div className="min-w-0">
                 <BlogPostContent content={post.content} />
               </div>
 
-              <aside className="hidden lg:block">
+              <aside className="hidden lg:block min-w-0 overflow-hidden">
                 <BlogTableOfContents content={post.content} />
               </aside>
             </div>

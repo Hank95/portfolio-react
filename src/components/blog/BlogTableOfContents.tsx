@@ -47,7 +47,7 @@ export default function BlogTableOfContents({
   if (headings.length === 0) return null;
 
   return (
-    <nav className="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto">
+    <nav className="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto pr-4">
       <h2 className="text-sm font-semibold text-[#4d6e5e] dark:text-[#a8d5ba] mb-4 uppercase tracking-wide">
         Table of Contents
       </h2>
@@ -59,7 +59,7 @@ export default function BlogTableOfContents({
           >
             <button
               onClick={() => handleClick(heading.id)}
-              className={`text-left text-sm transition-colors hover:text-[#4d6e5e] dark:hover:text-[#a8d5ba] ${
+              className={`text-left text-sm transition-colors hover:text-[#4d6e5e] dark:hover:text-[#a8d5ba] line-clamp-2 w-full ${
                 activeId === heading.id
                   ? "text-[#4d6e5e] dark:text-[#a8d5ba] font-medium"
                   : "text-gray-600 dark:text-gray-400"
