@@ -22,6 +22,7 @@ import { Link } from "react-router-dom";
 import ContactForm from "@/components/ContactsForm";
 import { Helmet } from "react-helmet-async";
 import { useFadeUp } from "@/hooks/useScrollAnimation";
+import BlogLatestPosts from "@/components/blog/BlogLatestPosts";
 
 export default function Home() {
   // Animation refs
@@ -29,6 +30,7 @@ export default function Home() {
   const experienceRef = useFadeUp();
   const skillsRef = useFadeUp();
   const projectsRef = useFadeUp();
+  const blogRef = useFadeUp();
   const contactRef = useFadeUp();
   return (
     <div className="flex flex-col min-h-[100dvh] ">
@@ -733,8 +735,15 @@ export default function Home() {
           </div>
         </section>
         <section
-          ref={contactRef}
+          ref={blogRef}
           className="w-full py-12 md:py-24 lg:py-32"
+          id="blog"
+        >
+          <BlogLatestPosts />
+        </section>
+        <section
+          ref={contactRef}
+          className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800"
           id="contact"
         >
           <ContactForm />

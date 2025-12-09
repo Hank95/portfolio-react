@@ -8,6 +8,10 @@ const Home = lazy(() => import("../pages/Home"));
 const ResumePage = lazy(() => import("../pages/ResumePage"));
 const GlobePage = lazy(() => import("@/pages/GlobePage"));
 const Contact = lazy(() => import("@/pages/ContactsPage"));
+const BlogListPage = lazy(() => import("@/pages/blog/BlogListPage"));
+const BlogPostPage = lazy(() => import("@/pages/blog/BlogPostPage"));
+const BlogCategoryPage = lazy(() => import("@/pages/blog/BlogCategoryPage"));
+const BlogTagPage = lazy(() => import("@/pages/blog/BlogTagPage"));
 
 export const BrowserRouter = createBrowserRouter([
   {
@@ -44,6 +48,38 @@ export const BrowserRouter = createBrowserRouter([
         element: (
           <Suspense fallback={<PageLoader text="Loading contact..." />}>
             <Contact />
+          </Suspense>
+        ),
+      },
+      {
+        path: "blog",
+        element: (
+          <Suspense fallback={<PageLoader text="Loading blog..." />}>
+            <BlogListPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "blog/:slug",
+        element: (
+          <Suspense fallback={<PageLoader text="Loading post..." />}>
+            <BlogPostPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "blog/category/:categorySlug",
+        element: (
+          <Suspense fallback={<PageLoader text="Loading category..." />}>
+            <BlogCategoryPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "blog/tag/:tagSlug",
+        element: (
+          <Suspense fallback={<PageLoader text="Loading tag..." />}>
+            <BlogTagPage />
           </Suspense>
         ),
       },

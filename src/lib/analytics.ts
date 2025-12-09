@@ -89,3 +89,13 @@ export const trackPerformanceMetric = (
     });
   }
 };
+
+// Track blog post views
+export const trackBlogView = (postSlug: string, postTitle: string) => {
+  trackEvent("view_post", "blog", `${postSlug}: ${postTitle}`);
+};
+
+// Track blog search
+export const trackBlogSearch = (query: string) => {
+  trackEvent("search", "blog", query);
+};
