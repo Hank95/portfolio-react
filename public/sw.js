@@ -1,3 +1,25 @@
+// Skip service worker entirely in development
+const isLocalhost = self.location.hostname === 'localhost' ||
+                    self.location.hostname === '127.0.0.1' ||
+                    self.location.hostname === '[::1]';
+
+if (isLocalhost) {
+  // In development, unregister this service worker and skip all caching
+  self.addEventListener('install', () => self.skipWaiting());
+  self.addEventListener('activate', (event) => {
+    event.waitUntil(
+      caches.keys().then((names) => Promise.all(names.map((name) => caches.delete(name))))
+        .then(() => self.clients.claim())
+        .then(() => self.registration.unregister())
+    );
+  });
+  // Don't set up any fetch handlers in dev mode
+} else {
+  // Production service worker code below
+  initProductionServiceWorker();
+}
+
+function initProductionServiceWorker() {
 const CACHE_NAME = 'portfolio-v1';
 const STATIC_CACHE = 'static-v1';
 const DYNAMIC_CACHE = 'dynamic-v1';
@@ -181,3 +203,4 @@ self.addEventListener('fetch', (event) => {
       })
   );
 });
+} // End initProductionServiceWorker
