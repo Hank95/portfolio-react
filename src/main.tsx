@@ -12,9 +12,11 @@ import { performanceMonitor } from "./lib/performanceMonitor";
 if (typeof window !== 'undefined') {
   // Start performance monitoring
   performanceMonitor;
-  
-  // Register service worker
-  registerSW();
+
+  // Register service worker only in production
+  if (import.meta.env.PROD) {
+    registerSW();
+  }
 }
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

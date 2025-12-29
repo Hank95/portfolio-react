@@ -8,6 +8,7 @@ const Home = lazy(() => import("../pages/Home"));
 const ResumePage = lazy(() => import("../pages/ResumePage"));
 const GlobePage = lazy(() => import("@/pages/GlobePage"));
 const Contact = lazy(() => import("@/pages/ContactsPage"));
+const StravaLocalPage = lazy(() => import("@/pages/StravaLocalPage"));
 
 export const BrowserRouter = createBrowserRouter([
   {
@@ -44,6 +45,14 @@ export const BrowserRouter = createBrowserRouter([
         element: (
           <Suspense fallback={<PageLoader text="Loading contact..." />}>
             <Contact />
+          </Suspense>
+        ),
+      },
+      {
+        path: "projects/strava-local",
+        element: (
+          <Suspense fallback={<PageLoader text="Loading project..." />}>
+            <StravaLocalPage />
           </Suspense>
         ),
       },

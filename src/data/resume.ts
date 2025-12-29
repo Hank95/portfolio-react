@@ -49,6 +49,17 @@ export const resume = {
   ],
   technicalProjects: [
     {
+      name: "Strava Local",
+      github: "https://github.com/Hank95/strava-local",
+      description: [
+        "Local-first analytics platform for Strava data with privacy-focused architecture—all data stays on your machine.",
+        "Ingests Strava export (CSV + FIT files) into SQLite database for custom analysis and visualization.",
+        "Features interactive dashboard with activity breakdown charts, heatmaps, and route explorer.",
+        "Computes advanced training metrics: TSS, CTL/ATL/TSB (fitness/fatigue/form), HR zones, and TRIMP.",
+        "Built with Python, Flask, SQLite, and Leaflet.js for maps—designed for athletes who want data ownership.",
+      ],
+    },
+    {
       name: "CribScore",
       demo: "https://apps.apple.com/us/app/cribscore/id6747778251",
       website: "https://cribscoreapp.henrypendleton.com/",
