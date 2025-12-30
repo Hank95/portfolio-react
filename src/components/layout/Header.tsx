@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { siteConfig, navLinks } from '@/data/content';
 import { ThemeToggle } from '@/components/ThemeToggle';
@@ -7,6 +7,7 @@ import { ThemeToggle } from '@/components/ThemeToggle';
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,17 +18,31 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Handle hash scrolling after navigation
+  useEffect(() => {
+    if (location.hash) {
+      // Small delay to ensure DOM is ready after navigation
+      setTimeout(() => {
+        const element = document.querySelector(location.hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [location]);
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    // Only handle hash links on the home page
     if (href.startsWith('#')) {
-      if (location.pathname !== '/') {
-        // Navigate to home first, then scroll
-        return;
-      }
       e.preventDefault();
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+      if (location.pathname === '/') {
+        // Already on home page, just scroll
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        // Navigate to home with hash, then scroll after navigation
+        navigate('/' + href);
       }
     }
   };
@@ -63,7 +78,7 @@ export function Header() {
                 link.href.startsWith('#') ? (
                   <a
                     key={link.href}
-                    href={location.pathname === '/' ? link.href : `/${link.href}`}
+                    href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
                     className="text-small text-text-muted hover:text-text transition-colors"
                   >
