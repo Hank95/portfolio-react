@@ -5,8 +5,60 @@
 @tailwind utilities;
 
 @layer base {
+  /* Light mode (default) */
   :root {
     --header-height: 4rem;
+
+    /* Background scale */
+    --color-bg: 250 250 250;
+    --color-bg-subtle: 244 244 245;
+    --color-bg-muted: 228 228 231;
+
+    /* Text scale */
+    --color-text: 24 24 27;
+    --color-text-muted: 113 113 122;
+    --color-text-subtle: 161 161 170;
+
+    /* Accent */
+    --color-accent: 59 130 246;
+    --color-accent-muted: 29 78 216;
+
+    /* Status */
+    --color-status-live: 34 197 94;
+    --color-status-building: 245 158 11;
+    --color-status-professional: 59 130 246;
+
+    /* Border */
+    --color-border: 228 228 231;
+    --color-border-hover: 212 212 216;
+
+    /* Shadows */
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Dark mode */
+  .dark {
+    --color-bg: 10 10 11;
+    --color-bg-subtle: 20 20 21;
+    --color-bg-muted: 28 28 30;
+
+    --color-text: 250 250 250;
+    --color-text-muted: 161 161 170;
+    --color-text-subtle: 113 113 122;
+
+    --color-accent: 59 130 246;
+    --color-accent-muted: 29 78 216;
+
+    --color-status-live: 34 197 94;
+    --color-status-building: 245 158 11;
+    --color-status-professional: 59 130 246;
+
+    --color-border: 39 39 42;
+    --color-border-hover: 63 63 70;
+
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.4);
   }
 
   html {
@@ -18,6 +70,7 @@
   body {
     @apply bg-bg text-text font-sans;
     font-feature-settings: "rlig" 1, "calt" 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   /* Focus styles for accessibility */

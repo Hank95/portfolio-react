@@ -15,13 +15,13 @@ export default function Header() {
   const linkClasses = (path: string) =>
     `text-sm font-medium hover:underline underline-offset-4 ${
       currentPath === path
-        ? "text-yellow-400 dark:text-yellow-300 underline"
-        : "text-gray-200 dark:text-gray-300 hover:text-gray-200 dark:hover:text-gray-300"
+        ? "text-accent underline"
+        : "text-text-muted hover:text-text"
     }`;
 
   return (
-    <header className="px-4 lg:px-6 h-14 flex items-center bg-[#4d6e5e] text-white dark:bg-gray-900 dark:text-gray-50">
-      <Link className="flex items-center justify-center" to="/">
+    <header className="px-4 lg:px-6 h-14 flex items-center bg-bg-subtle border-b border-border">
+      <Link className="flex items-center justify-center text-text" to="/">
         <HPLogoIconWhite className="h-12 w-12" />
         <span className="sr-only">Henry Pendleton's Portfolio</span>
       </Link>

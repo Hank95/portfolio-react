@@ -17,35 +17,35 @@ export default {
       },
     },
     extend: {
-      // Color system
+      // Color system using CSS variables for light/dark mode
       colors: {
-        // Background scale (dark theme)
+        // Background scale
         bg: {
-          DEFAULT: '#0a0a0b',
-          subtle: '#141415',
-          muted: '#1c1c1e',
+          DEFAULT: 'rgb(var(--color-bg) / <alpha-value>)',
+          subtle: 'rgb(var(--color-bg-subtle) / <alpha-value>)',
+          muted: 'rgb(var(--color-bg-muted) / <alpha-value>)',
         },
         // Text scale
         text: {
-          DEFAULT: '#fafafa',
-          muted: '#a1a1aa',
-          subtle: '#71717a',
+          DEFAULT: 'rgb(var(--color-text) / <alpha-value>)',
+          muted: 'rgb(var(--color-text-muted) / <alpha-value>)',
+          subtle: 'rgb(var(--color-text-subtle) / <alpha-value>)',
         },
         // Accent (single color, used sparingly)
         accent: {
-          DEFAULT: '#3b82f6',
-          muted: '#1d4ed8',
+          DEFAULT: 'rgb(var(--color-accent) / <alpha-value>)',
+          muted: 'rgb(var(--color-accent-muted) / <alpha-value>)',
         },
         // Status colors
         status: {
-          live: '#22c55e',
-          building: '#f59e0b',
-          professional: '#3b82f6',
+          live: 'rgb(var(--color-status-live) / <alpha-value>)',
+          building: 'rgb(var(--color-status-building) / <alpha-value>)',
+          professional: 'rgb(var(--color-status-professional) / <alpha-value>)',
         },
         // Border
         border: {
-          DEFAULT: '#27272a',
-          hover: '#3f3f46',
+          DEFAULT: 'rgb(var(--color-border) / <alpha-value>)',
+          hover: 'rgb(var(--color-border-hover) / <alpha-value>)',
         },
       },
 
@@ -69,10 +69,10 @@ export default {
         '22': '5.5rem',
       },
 
-      // Effects
+      // Effects - using CSS variables
       boxShadow: {
-        'card': '0 1px 3px rgba(0,0,0,0.3)',
-        'card-hover': '0 4px 12px rgba(0,0,0,0.4)',
+        'card': 'var(--shadow-card)',
+        'card-hover': 'var(--shadow-card-hover)',
       },
 
       // Transitions

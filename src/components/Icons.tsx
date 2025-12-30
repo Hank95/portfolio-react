@@ -283,7 +283,7 @@ function HPLogoIconWhite(
             textDecoration="none"
             fontFamily="Times-Roman, Times"
             fontSize="253.355"
-            fill="#ffffff"
+            fill="currentColor"
             y="190.0"
             x="1.0"
           >
@@ -299,7 +299,7 @@ function HPLogoIconWhite(
             y="190.0"
             x="1.0"
             fontSize="253.355"
-            fill="#ffffff"
+            fill="currentColor"
             textDecoration="none"
           >
             P

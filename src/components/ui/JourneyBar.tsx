@@ -169,12 +169,12 @@ export function JourneyBar() {
           >
             <defs>
               <linearGradient id="journeyFill" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.2" />
-                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.02" />
+                <stop offset="0%" stopColor="rgb(var(--color-accent))" stopOpacity="0.2" />
+                <stop offset="100%" stopColor="rgb(var(--color-accent))" stopOpacity="0.02" />
               </linearGradient>
               <linearGradient id="journeyProgressFill" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.5" />
-                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.1" />
+                <stop offset="0%" stopColor="rgb(var(--color-accent))" stopOpacity="0.5" />
+                <stop offset="100%" stopColor="rgb(var(--color-accent))" stopOpacity="0.1" />
               </linearGradient>
               <clipPath id="journeyProgressClip">
                 <rect x="0" y="0" width={progressX} height={height} />
@@ -208,7 +208,7 @@ export function JourneyBar() {
             <path
               d={linePath}
               fill="none"
-              stroke="#3b82f6"
+              stroke="rgb(var(--color-accent))"
               strokeWidth="2"
               strokeLinecap="round"
               clipPath="url(#journeyProgressClip)"
@@ -232,7 +232,7 @@ export function JourneyBar() {
                     y1={stationY + 3}
                     x2={stationX}
                     y2={height}
-                    stroke={isHovered ? '#22c55e' : isPassed ? '#3b82f6' : 'currentColor'}
+                    stroke={isHovered ? 'rgb(var(--color-status-live))' : isPassed ? 'rgb(var(--color-accent))' : 'currentColor'}
                     strokeWidth="1"
                     strokeDasharray="2 2"
                     className={isPassed || isHovered ? '' : 'text-text-subtle'}
@@ -241,7 +241,7 @@ export function JourneyBar() {
                   {/* Triangle marker */}
                   <polygon
                     points={`${stationX},${stationY - 4} ${stationX - 4},${stationY + 4} ${stationX + 4},${stationY + 4}`}
-                    fill={isHovered ? '#22c55e' : isPassed ? '#3b82f6' : 'currentColor'}
+                    fill={isHovered ? 'rgb(var(--color-status-live))' : isPassed ? 'rgb(var(--color-accent))' : 'currentColor'}
                     className={isPassed || isHovered ? '' : 'text-text-subtle'}
                     opacity={isHovered ? 1 : isPassed ? 0.7 : 0.4}
                   />
@@ -251,7 +251,7 @@ export function JourneyBar() {
                       cx={stationX}
                       cy={stationY}
                       r="12"
-                      fill="#22c55e"
+                      fill="rgb(var(--color-status-live))"
                       fillOpacity="0.15"
                     />
                   )}
@@ -275,7 +275,7 @@ export function JourneyBar() {
                     y1={waypointY + 4}
                     x2={waypointX}
                     y2={height}
-                    stroke={isPassed ? '#3b82f6' : 'currentColor'}
+                    stroke={isPassed ? 'rgb(var(--color-accent))' : 'currentColor'}
                     strokeWidth="1"
                     strokeDasharray="3 3"
                     className={isPassed ? '' : 'text-text-subtle'}
@@ -285,7 +285,7 @@ export function JourneyBar() {
                     cx={waypointX}
                     cy={waypointY}
                     r={isPassed ? 4 : 3}
-                    fill={isPassed ? '#3b82f6' : 'currentColor'}
+                    fill={isPassed ? 'rgb(var(--color-accent))' : 'currentColor'}
                     className={isPassed ? '' : 'text-text-subtle'}
                   />
                 </g>
@@ -307,8 +307,8 @@ export function JourneyBar() {
             )}
 
             {/* Progress dot */}
-            <circle cx={progressX} cy={progressY} r="6" fill="#3b82f6" filter="url(#journeyGlow)" />
-            <circle cx={progressX} cy={progressY} r="10" fill="#3b82f6" fillOpacity="0.2" />
+            <circle cx={progressX} cy={progressY} r="6" fill="rgb(var(--color-accent))" filter="url(#journeyGlow)" />
+            <circle cx={progressX} cy={progressY} r="10" fill="rgb(var(--color-accent))" fillOpacity="0.2" />
           </svg>
 
           {/* Aid station tooltip */}
@@ -353,7 +353,7 @@ export function JourneyBar() {
                     (1 - (progressElevation - minElevation) / (maxElevation - minElevation)) * 20 * 0.8
                   }
                   r="3"
-                  fill="#3b82f6"
+                  fill="rgb(var(--color-accent))"
                 />
               </svg>
             </div>

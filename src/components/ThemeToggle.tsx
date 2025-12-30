@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { ThemeContext } from '@/context/ThemeContext';
-import { Moon, Sun } from 'lucide-react';
+import { Moon, Sun, Monitor } from 'lucide-react';
 
 export function ThemeToggle() {
   const themeContext = useContext(ThemeContext);
@@ -11,29 +11,48 @@ export function ThemeToggle() {
 
   const { theme, setTheme } = themeContext;
 
-  // Determine current effective theme
-  const isDark =
-    theme === 'dark' ||
-    (theme === 'system' &&
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches);
+  // Cycle through: light → dark → system → light
+  const cycleTheme = () => {
+    const nextTheme = theme === 'light' ? 'dark' : theme === 'dark' ? 'system' : 'light';
+    setTheme(nextTheme);
+  };
 
-  const toggleTheme = () => {
-    const newTheme = isDark ? 'light' : 'dark';
-    setTheme(newTheme);
-    document.documentElement.classList.toggle('dark', newTheme === 'dark');
+  const getIcon = () => {
+    switch (theme) {
+      case 'light':
+        return <Sun className="w-5 h-5" />;
+      case 'dark':
+        return <Moon className="w-5 h-5" />;
+      case 'system':
+        return <Monitor className="w-5 h-5" />;
+      default:
+        return <Monitor className="w-5 h-5" />;
+    }
+  };
+
+  const getLabel = () => {
+    switch (theme) {
+      case 'light':
+        return 'Light mode (click for dark)';
+      case 'dark':
+        return 'Dark mode (click for system)';
+      case 'system':
+        return 'System theme (click for light)';
+      default:
+        return 'Toggle theme';
+    }
   };
 
   return (
     <button
-      onClick={toggleTheme}
-      className="p-2 rounded-md text-text-muted hover:text-text hover:bg-bg-subtle transition-colors"
-      aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+      onClick={cycleTheme}
+      className="p-2 rounded-md text-text-muted hover:text-text hover:bg-bg-muted transition-colors"
+      aria-label={getLabel()}
+      title={getLabel()}
     >
-      {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+      {getIcon()}
     </button>
   );
 }
 
-// Keep default export for backwards compatibility
 export default ThemeToggle;

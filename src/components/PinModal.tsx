@@ -45,46 +45,46 @@ const PinModal: React.FC<PinModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
-      <div className="bg-white p-4 rounded-lg text-black">
-        <h2 className="text-xl mb-4">Add a Pin</h2>
-        <div className="mb-2">
-          <label className="block mb-1">Name</label>
+    <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
+      <div className="bg-bg-subtle border border-border p-6 rounded-lg shadow-xl">
+        <h2 className="text-xl mb-4 text-text font-semibold">Add a Pin</h2>
+        <div className="mb-3">
+          <label className="block mb-1 text-text-muted text-sm">Name</label>
           <input
             type="text"
-            className="w-full p-2 border"
+            className="w-full p-2 border border-border bg-bg text-text rounded-md"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <div className="mb-2">
-          <label className="block mb-1">Message</label>
+        <div className="mb-3">
+          <label className="block mb-1 text-text-muted text-sm">Message</label>
           <input
             type="text"
-            className="w-full p-2 border"
+            className="w-full p-2 border border-border bg-bg text-text rounded-md"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
         </div>
-        <div className="mb-2">
-          <label className="block mb-1">Color</label>
+        <div className="mb-4">
+          <label className="block mb-1 text-text-muted text-sm">Color</label>
           <input
             type="color"
-            className="w-full p-2 border"
-            style={{ backgroundColor: color, cursor: "pointer" }}
+            className="w-full p-2 border border-border rounded-md cursor-pointer"
+            style={{ backgroundColor: color }}
             value={color}
             onChange={(e) => setColor(e.target.value)}
           />
         </div>
-        <div className="flex justify-end">
+        <div className="flex justify-end gap-2">
           <button
-            className="bg-gray-500 text-white px-4 py-2 rounded mr-2"
+            className="bg-bg-muted text-text px-4 py-2 rounded-md hover:bg-border transition-colors"
             onClick={onClose}
           >
             Cancel
           </button>
           <button
-            className="bg-blue-500 text-white px-4 py-2 rounded"
+            className="bg-accent text-white px-4 py-2 rounded-md hover:bg-accent-muted transition-colors"
             onClick={handleSubmit}
           >
             Save

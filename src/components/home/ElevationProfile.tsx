@@ -115,15 +115,15 @@ export function ElevationProfile({ className = '' }: ElevationProfileProps) {
         <defs>
           {/* Gradient for the filled area */}
           <linearGradient id="elevationFill" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.15" />
-            <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.08" />
-            <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.02" />
+            <stop offset="0%" stopColor="rgb(var(--color-accent))" stopOpacity="0.15" />
+            <stop offset="50%" stopColor="rgb(var(--color-accent))" stopOpacity="0.08" />
+            <stop offset="100%" stopColor="rgb(var(--color-accent))" stopOpacity="0.02" />
           </linearGradient>
 
           {/* Progress gradient */}
           <linearGradient id="progressFill" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.1" />
+            <stop offset="0%" stopColor="rgb(var(--color-accent))" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="rgb(var(--color-accent))" stopOpacity="0.1" />
           </linearGradient>
 
           {/* Glow filter for progress dot */}
@@ -186,7 +186,7 @@ export function ElevationProfile({ className = '' }: ElevationProfileProps) {
         <path
           d={linePath}
           fill="none"
-          stroke="#3b82f6"
+          stroke="rgb(var(--color-accent))"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -208,7 +208,7 @@ export function ElevationProfile({ className = '' }: ElevationProfileProps) {
                 y1={stationY}
                 x2={stationX}
                 y2={height - 5}
-                stroke={isHighlighted ? '#f59e0b' : 'currentColor'}
+                stroke={isHighlighted ? 'rgb(var(--color-status-building))' : 'currentColor'}
                 strokeWidth={isHighlighted ? 1.5 : 0.75}
                 strokeDasharray={isHighlighted ? 'none' : '2 2'}
                 className={isHighlighted ? '' : 'text-text-subtle'}
@@ -219,7 +219,7 @@ export function ElevationProfile({ className = '' }: ElevationProfileProps) {
                 cx={stationX}
                 cy={stationY}
                 r={isHighlighted ? 4 : 2.5}
-                fill={isHighlighted ? '#f59e0b' : 'currentColor'}
+                fill={isHighlighted ? 'rgb(var(--color-status-building))' : 'currentColor'}
                 className={isHighlighted ? '' : 'text-text-subtle'}
               />
             </g>
@@ -245,14 +245,14 @@ export function ElevationProfile({ className = '' }: ElevationProfileProps) {
           cx={progressX}
           cy={progressY}
           r="5"
-          fill="#3b82f6"
+          fill="rgb(var(--color-accent))"
           filter="url(#glow)"
         />
         <circle
           cx={progressX}
           cy={progressY}
           r="8"
-          fill="#3b82f6"
+          fill="rgb(var(--color-accent))"
           fillOpacity="0.2"
         />
       </svg>
@@ -270,7 +270,7 @@ export function ElevationProfile({ className = '' }: ElevationProfileProps) {
           {isHovered ? (
             <span className="text-text-muted">
               {hoveredAidStation ? (
-                <span className="text-amber-500">{hoveredAidStation}</span>
+                <span className="text-status-building">{hoveredAidStation}</span>
               ) : (
                 <>
                   <span className="text-text">{hoverMile.toFixed(1)} mi</span>
