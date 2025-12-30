@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { ExternalLink, Github, Apple } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { StatusBadge } from './StatusBadge';
 import type { Project } from '@/data/projects';
@@ -39,8 +40,53 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
             {project.techStack.join(' · ')}
           </span>
 
-          {/* Status badge */}
-          <StatusBadge status={project.status} />
+          {/* Links + Status */}
+          <div className="flex items-center gap-3 shrink-0">
+            {/* Quick links */}
+            {(project.links.live || project.links.github || project.links.appStore) && (
+              <div className="flex items-center gap-2">
+                {project.links.live && (
+                  <a
+                    href={project.links.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="text-text-subtle hover:text-accent transition-colors"
+                    aria-label="View live site"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                )}
+                {project.links.github && (
+                  <a
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="text-text-subtle hover:text-text transition-colors"
+                    aria-label="View source on GitHub"
+                  >
+                    <Github className="w-3.5 h-3.5" />
+                  </a>
+                )}
+                {project.links.appStore && (
+                  <a
+                    href={project.links.appStore}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="text-text-subtle hover:text-text transition-colors"
+                    aria-label="View on App Store"
+                  >
+                    <Apple className="w-3.5 h-3.5" />
+                  </a>
+                )}
+              </div>
+            )}
+
+            {/* Status badge */}
+            <StatusBadge status={project.status} />
+          </div>
         </div>
       </article>
     </Link>

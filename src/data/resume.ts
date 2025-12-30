@@ -4,20 +4,21 @@ export const resume = {
   phone: "540-761-1806",
   email: "hhpendleton@gmail.com",
   github: "hank95",
-  title: "Full-Stack Software Engineer",
+  title: "Full Stack Engineer",
   summary:
-    "Software engineer experienced in front-end and back-end technologies. With a background in sales and finance, I bring strong analytical and communication skills. My passion to create and problem solve, matched with a knack for learning quickly, makes me a great addition to any team.",
+    "I turn ideas into working software. Recent work spans React dashboards, native iOS apps, and Python-based analytics tools. Background in sales and finance brings strong analytical and communication skills to technical problem-solving.",
   technicalSkills: {
-    languages: ["JavaScript", "TypeScript", "Ruby", "Swift"],
+    languages: ["JavaScript", "TypeScript", "Python", "Swift", "Ruby"],
     webDevelopment: [
       "React",
       "Next.js",
       "Vue.js",
       "React Native",
+      "Flask",
       "Ruby on Rails",
       "Node.js",
     ],
-    databases: ["SQL", "PostgreSQL"],
+    databases: ["PostgreSQL", "SQLite"],
     cloudServices: ["AWS (S3, Lambda)", "Firebase", "CloudKit"],
     containers: ["Docker"],
   },
@@ -25,8 +26,8 @@ export const resume = {
     {
       company: "Apex146",
       location: "Remote",
-      title: "Lead Front-end Software Developer",
-      date: "03/2022 - Present",
+      title: "Frontend Developer",
+      date: "03/2022 - 12/2024",
       projects: [
         {
           name: "White Label Virtual Sports Platform",

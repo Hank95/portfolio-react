@@ -6,6 +6,11 @@ export interface Project {
   techStack: string[];
   featured: boolean;
   image?: string;
+  images?: {
+    src: string;
+    alt: string;
+    caption?: string;
+  }[];
   links: {
     live?: string;
     github?: string;
@@ -50,6 +55,23 @@ export const projects: Project[] = [
     status: 'live',
     featured: true,
     techStack: ['Python', 'Flask', 'SQLite', 'Leaflet'],
+    images: [
+      {
+        src: '/strava-local/dashboard.png',
+        alt: 'Strava Local dashboard showing activity overview and statistics',
+        caption: 'Dashboard with activity breakdowns and weekly trends',
+      },
+      {
+        src: '/strava-local/heatmap.png',
+        alt: 'Heatmap visualization of all running and cycling routes',
+        caption: 'Route heatmap built with Leaflet—every run and ride visualized',
+      },
+      {
+        src: '/strava-local/metrics.png',
+        alt: 'Training metrics showing fitness and fatigue curves',
+        caption: 'Training load calculations: TSS, fitness/fatigue balance',
+      },
+    ],
     links: {
       github: 'https://github.com/Hank95/strava-local',
     },

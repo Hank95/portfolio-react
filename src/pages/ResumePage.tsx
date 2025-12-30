@@ -1,12 +1,20 @@
-import React from "react";
+import { Helmet } from "react-helmet-async";
 import Resume from "@/components/Resume";
 
-const ResumePage: React.FC = () => {
+export default function ResumePage() {
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
-      <Resume />
-    </div>
-  );
-};
+    <>
+      <Helmet>
+        <title>Resume - Henry Pendleton</title>
+        <meta
+          name="description"
+          content="Henry Pendleton's resume. Full Stack Engineer building web apps, native iOS apps, and data tools."
+        />
+      </Helmet>
 
-export default ResumePage;
+      <main id="main" className="flex-1 pt-24 pb-8 px-4">
+        <Resume />
+      </main>
+    </>
+  );
+}

@@ -111,6 +111,31 @@ export default function ProjectDetail() {
           )}
         </Section>
 
+        {/* Project images */}
+        {project.images && project.images.length > 0 && (
+          <Section className="pt-0 pb-12">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {project.images.map((image, index) => (
+                <figure key={index} className="group">
+                  <div className="overflow-hidden rounded-lg border border-border bg-bg-subtle">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]"
+                      loading="lazy"
+                    />
+                  </div>
+                  {image.caption && (
+                    <figcaption className="mt-2 text-xs text-text-subtle">
+                      {image.caption}
+                    </figcaption>
+                  )}
+                </figure>
+              ))}
+            </div>
+          </Section>
+        )}
+
         {/* Case study content */}
         {caseStudy && (
           <Section className="pt-0">

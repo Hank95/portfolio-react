@@ -37,11 +37,6 @@ export function Intro() {
           {intro.description}
         </p>
 
-        {/* Current role */}
-        <p className="mt-4 text-body text-text-muted leading-relaxed">
-          {intro.currentRole}
-        </p>
-
         {/* Location */}
         <p className="mt-4 text-small text-text-subtle">
           {intro.location}
