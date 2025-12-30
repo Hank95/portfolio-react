@@ -6,7 +6,7 @@ export function MoreProjects() {
   if (moreProjects.length === 0) return null;
 
   return (
-    <Section className="pt-0">
+    <Section className="pt-0" mileMarker={32}>
       <h2 className="text-title text-text">More Projects</h2>
 
       <div className="mt-6 divide-y divide-border">

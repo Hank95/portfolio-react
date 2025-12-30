@@ -28,9 +28,9 @@ export const now = {
 
 export const about = {
   paragraphs: [
-    `Software engineer based in Charleston, SC. I like building things end-to-end—from database to UI—and shipping products people actually use.`,
-    `Before engineering: yacht sales and economics. Same skills apply—understanding what people need, communicating clearly, solving problems systematically.`,
-    `Outside work: long runs, usually with a map involved.`,
+    `Software engineer based in Charleston, SC. I build products end-to-end, from database to UI, with a focus on shipping things that people actually use.`,
+    `Before engineering, I worked in yacht sales and studied economics. The work was different, but the skills are the same: understanding real needs, communicating clearly, and solving problems systematically`,
+    `Outside of work, I’m usually on a long run, often with a map involved`,
   ],
 };
 

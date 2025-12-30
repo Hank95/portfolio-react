@@ -113,26 +113,46 @@ export default function ProjectDetail() {
 
         {/* Project images */}
         {project.images && project.images.length > 0 && (
-          <Section className="pt-0 pb-12">
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {project.images.map((image, index) => (
-                <figure key={index} className="group">
-                  <div className="overflow-hidden rounded-lg border border-border bg-bg-subtle">
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]"
-                      loading="lazy"
-                    />
-                  </div>
-                  {image.caption && (
-                    <figcaption className="mt-2 text-xs text-text-subtle">
-                      {image.caption}
-                    </figcaption>
-                  )}
-                </figure>
-              ))}
-            </div>
+          <Section className="pt-0 pb-12" wide>
+            {/* Featured image (first one) */}
+            <figure className="group">
+              <div className="overflow-hidden rounded-xl border border-border bg-bg-subtle shadow-2xl shadow-black/20">
+                <img
+                  src={project.images[0].src}
+                  alt={project.images[0].alt}
+                  className="w-full h-auto"
+                  loading="lazy"
+                />
+              </div>
+              {project.images[0].caption && (
+                <figcaption className="mt-3 text-sm text-text-muted text-center">
+                  {project.images[0].caption}
+                </figcaption>
+              )}
+            </figure>
+
+            {/* Additional images in a grid */}
+            {project.images.length > 1 && (
+              <div className="mt-8 grid gap-6 md:grid-cols-2">
+                {project.images.slice(1).map((image, index) => (
+                  <figure key={index} className="group">
+                    <div className="overflow-hidden rounded-lg border border-border bg-bg-subtle shadow-lg shadow-black/10">
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]"
+                        loading="lazy"
+                      />
+                    </div>
+                    {image.caption && (
+                      <figcaption className="mt-2 text-xs text-text-subtle">
+                        {image.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                ))}
+              </div>
+            )}
           </Section>
         )}
 

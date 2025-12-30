@@ -4,7 +4,7 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 
 export function Contact() {
   return (
-    <Section id="contact" className="pb-32">
+    <Section id="contact" className="pb-32" mileMarker={62}>
       <h2 className="text-title text-text">Contact</h2>
 
       <div className="mt-6 max-w-xl">
