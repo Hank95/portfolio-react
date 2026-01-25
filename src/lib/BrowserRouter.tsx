@@ -7,6 +7,7 @@ import PageLoader from '../components/PageLoader';
 const Home = lazy(() => import('../pages/Home'));
 const ResumePage = lazy(() => import('../pages/ResumePage'));
 const ProjectDetail = lazy(() => import('../pages/ProjectDetail'));
+const NotFound = lazy(() => import('../pages/NotFound'));
 
 // Keep legacy routes for backwards compatibility (can remove later)
 const GlobePage = lazy(() => import('@/pages/GlobePage'));
@@ -47,6 +48,15 @@ export const BrowserRouter = createBrowserRouter([
         element: (
           <Suspense fallback={<PageLoader text="Loading globe..." />}>
             <GlobePage />
+          </Suspense>
+        ),
+      },
+      // Catch-all 404 route
+      {
+        path: '*',
+        element: (
+          <Suspense fallback={<PageLoader text="Loading..." />}>
+            <NotFound />
           </Suspense>
         ),
       },
