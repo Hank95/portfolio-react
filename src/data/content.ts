@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Henry Pendleton",
-  title: "Full Stack Engineer",
+  title: "MarTech Software Engineer",
   email: "hhpendleton@gmail.com",
   location: "Charleston, SC",
   github: "https://github.com/Hank95",
@@ -9,8 +9,8 @@ export const siteConfig = {
 
 export const intro = {
   headline: "Henry Pendleton",
-  subtitle: "Full Stack Engineer",
-  description: `I turn ideas into working software. Recent work spans React dashboards, native iOS apps, and Python-based analytics tools; whatever the problem calls for.`,
+  subtitle: "MarTech Software Engineer",
+  description: `I build web and marketing technology solutions that drive digital performance. Currently at Maymoth Homes, working at the intersection of engineering and marketing.`,
   location: `Based in Charleston, SC.`,
 };
 
@@ -21,23 +21,23 @@ export const now = {
     link: "https://aravaiparunning.com/network/blackcanyon/",
   },
   building: [
-    "Building a React Native treasure hunt app",
-    "Recently shipped two iOS apps to the App Store",
+    "MarTech Software Engineer at Maymoth Homes",
+    "Building marketing automation and web technology solutions",
   ],
 };
 
 export const about = {
   paragraphs: [
-    `Software engineer based in Charleston, SC. I build products end-to-end, from database to UI, with a focus on shipping things that people actually use.`,
-    `Before engineering, I worked in yacht sales and studied economics. The work was different, but the skills are the same: understanding real needs, communicating clearly, and solving problems systematically`,
-    `Outside of work, I’m usually on a long run, often with a map involved`,
+    `MarTech Software Engineer at Maymoth Homes in Charleston, SC. I design and develop web and marketing technology solutions that enhance digital performance, enable automation, and strengthen customer engagement.`,
+    `Before this role, I built React dashboards, native iOS apps, and Python-based analytics tools. Earlier still, I worked in yacht sales and studied economics—different work, but the same skills: understanding real needs, communicating clearly, and solving problems systematically.`,
+    `Outside of work, I'm usually on a long run, often with a map involved.`,
   ],
 };
 
 export const contact = {
   email: "hhpendleton@gmail.com",
-  availability: "Open to full-time roles and interesting contract work.",
-  locationNote: "Based in Charleston, available for remote.",
+  availability: "Always interested in connecting and discussing MarTech, web development, or side projects.",
+  locationNote: "Based in Charleston, SC.",
 };
 
 export const navLinks = [

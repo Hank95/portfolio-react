@@ -4,11 +4,11 @@ export const resume = {
   phone: "540-761-1806",
   email: "hhpendleton@gmail.com",
   github: "hank95",
-  title: "Full Stack Engineer",
+  title: "MarTech Software Engineer",
   summary:
-    "I turn ideas into working software. Recent work spans React dashboards, native iOS apps, and Python-based analytics tools. Background in sales and finance brings strong analytical and communication skills to technical problem-solving.",
+    "MarTech Software Engineer building web and marketing technology solutions that drive digital performance. I design and develop websites, integrate data feeds, and optimize digital tools that enable scalable marketing initiatives. Background in frontend development, native iOS apps, and Python analytics, combined with sales and finance experience, brings strong analytical and communication skills to translating marketing goals into technical execution.",
   technicalSkills: {
-    languages: ["JavaScript", "TypeScript", "Python", "Swift", "Ruby"],
+    languages: ["JavaScript", "TypeScript", "Python", "Swift", "Ruby", "SQL"],
     webDevelopment: [
       "React",
       "Next.js",
@@ -20,9 +20,26 @@ export const resume = {
     ],
     databases: ["PostgreSQL", "SQLite"],
     cloudServices: ["AWS (S3, Lambda)", "Firebase", "CloudKit"],
-    containers: ["Docker"],
+    martech: ["Google Analytics", "SEO", "CMS Platforms", "API Integrations"],
   },
   professionalExperience: [
+    {
+      company: "Maymoth Homes",
+      location: "Charleston, SC",
+      title: "MarTech Software Engineer",
+      date: "01/2026 - Present",
+      projects: [
+        {
+          name: "Marketing Technology & Web Development",
+          description: [
+            "Design, develop, and maintain marketing and web technology systems supporting digital campaigns, automation, and lead generation initiatives.",
+            "Implement and maintain tracking tags, data layers, and analytics scripts to ensure accurate measurement of user behavior and campaign performance.",
+            "Build and maintain API integrations connecting marketing platforms including CRM, CMS, and analytics tools.",
+            "Enhance website functionality, speed, and SEO readiness through clean code, structured data, and performance tuning.",
+          ],
+        },
+      ],
+    },
     {
       company: "Apex146",
       location: "Remote",

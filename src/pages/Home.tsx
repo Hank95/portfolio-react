@@ -5,19 +5,19 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Henry Pendleton - Full Stack Engineer</title>
+        <title>Henry Pendleton - MarTech Software Engineer</title>
         <meta
           name="description"
-          content="Full stack engineer building web apps, native iOS apps, and data tools. React, TypeScript, Python, SwiftUI."
+          content="MarTech Software Engineer building web and marketing technology solutions. React, TypeScript, Python, SwiftUI."
         />
         <meta
           name="keywords"
-          content="Henry Pendleton, full stack engineer, software engineer, React, TypeScript, SwiftUI, Python, Charleston SC"
+          content="Henry Pendleton, MarTech engineer, software engineer, marketing technology, React, TypeScript, SwiftUI, Python, Charleston SC"
         />
-        <meta property="og:title" content="Henry Pendleton - Full Stack Engineer" />
+        <meta property="og:title" content="Henry Pendleton - MarTech Software Engineer" />
         <meta
           property="og:description"
-          content="Full stack engineer building web apps, native iOS apps, and data tools."
+          content="MarTech Software Engineer building web and marketing technology solutions."
         />
         <meta property="og:type" content="website" />
       </Helmet>

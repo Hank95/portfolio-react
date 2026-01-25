@@ -8,7 +8,7 @@ export default function ResumePage() {
         <title>Resume - Henry Pendleton</title>
         <meta
           name="description"
-          content="Henry Pendleton's resume. Full Stack Engineer building web apps, native iOS apps, and data tools."
+          content="Henry Pendleton's resume. MarTech Software Engineer building web and marketing technology solutions at Maymoth Homes."
         />
       </Helmet>
 
