@@ -31,11 +31,6 @@ export default function Header() {
             About
           </Link>
         </RoutePreloader>
-        <RoutePreloader to="/globe" hoverPreload={true}>
-          <Link className={linkClasses("/globe")} to="/globe" onClick={() => handleNavClick("globe")}>
-            Pin Map
-          </Link>
-        </RoutePreloader>
         <RoutePreloader to="/contact" hoverPreload={true}>
           <Link className={linkClasses("/contact")} to="/contact" onClick={() => handleNavClick("contact")}>
             Contact

@@ -1,6 +1,6 @@
 import { Section } from '@/components/layout';
 import { contact, siteConfig } from '@/data/content';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 
 export function Contact() {
   return (

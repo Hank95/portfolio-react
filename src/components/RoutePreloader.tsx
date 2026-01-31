@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 interface RoutePreloaderProps {
@@ -16,12 +16,8 @@ const preloadedRoutes = new Set<string>();
 const routeComponents = {
   '/': () => import('../pages/Home'),
   '/resume': () => import('../pages/ResumePage'),
-  '/globe': () => import('../pages/GlobePage'),
   '/contact': () => import('../pages/ContactsPage'),
 };
-
-// Don't preload globe route by default due to large Three.js bundle
-const heavyRoutes = ['/globe'];
 
 const RoutePreloader: React.FC<RoutePreloaderProps> = ({
   children,
@@ -36,11 +32,8 @@ const RoutePreloader: React.FC<RoutePreloaderProps> = ({
   const observerRef = useRef<IntersectionObserver>();
 
   // Preload route function
-  const preloadRoute = (route: string) => {
+  const preloadRoute = useCallback((route: string) => {
     if (preloadedRoutes.has(route)) return;
-
-    // Skip heavy routes unless explicitly requested
-    if (heavyRoutes.includes(route) && !hoverPreload) return;
 
     const importFunction = routeComponents[route as keyof typeof routeComponents];
     if (importFunction) {
@@ -53,7 +46,7 @@ const RoutePreloader: React.FC<RoutePreloaderProps> = ({
           console.warn(`Failed to preload route ${route}:`, error);
         });
     }
-  };
+  }, []);
 
   // Mouse enter handler
   const handleMouseEnter = () => {
@@ -93,7 +86,7 @@ const RoutePreloader: React.FC<RoutePreloaderProps> = ({
         observerRef.current.disconnect();
       }
     };
-  }, [to, intersectionPreload]);
+  }, [to, intersectionPreload, preloadRoute]);
 
   // Cleanup
   useEffect(() => {
@@ -128,6 +121,7 @@ const RoutePreloader: React.FC<RoutePreloaderProps> = ({
 };
 
 // Hook for manual route preloading
+// eslint-disable-next-line react-refresh/only-export-components
 export const useRoutePreloader = () => {
   const preloadRoute = (route: string) => {
     const importFunction = routeComponents[route as keyof typeof routeComponents];

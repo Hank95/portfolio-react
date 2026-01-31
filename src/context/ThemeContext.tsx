@@ -8,6 +8,7 @@ type ThemeContextType = {
   resolvedTheme: 'light' | 'dark'; // The actual applied theme
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const ThemeContext = createContext<ThemeContextType | undefined>(
   undefined
 );

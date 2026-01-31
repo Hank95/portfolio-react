@@ -7,10 +7,9 @@ import PageLoader from '../components/PageLoader';
 const Home = lazy(() => import('../pages/Home'));
 const ResumePage = lazy(() => import('../pages/ResumePage'));
 const ProjectDetail = lazy(() => import('../pages/ProjectDetail'));
+const BlogList = lazy(() => import('../pages/BlogList'));
+const BlogPost = lazy(() => import('../pages/BlogPost'));
 const NotFound = lazy(() => import('../pages/NotFound'));
-
-// Keep legacy routes for backwards compatibility (can remove later)
-const GlobePage = lazy(() => import('@/pages/GlobePage'));
 
 export const BrowserRouter = createBrowserRouter([
   {
@@ -42,12 +41,19 @@ export const BrowserRouter = createBrowserRouter([
           </Suspense>
         ),
       },
-      // Legacy route - hidden easter egg
       {
-        path: 'globe',
+        path: 'blog',
         element: (
-          <Suspense fallback={<PageLoader text="Loading globe..." />}>
-            <GlobePage />
+          <Suspense fallback={<PageLoader text="Loading blog..." />}>
+            <BlogList />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'blog/:slug',
+        element: (
+          <Suspense fallback={<PageLoader text="Loading post..." />}>
+            <BlogPost />
           </Suspense>
         ),
       },
