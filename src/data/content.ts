@@ -17,7 +17,7 @@ export const intro = {
 export const now = {
   training: {
     race: "Black Canyon 100k",
-    date: "February 2025",
+    date: "February 2026 d",
     link: "https://aravaiparunning.com/network/blackcanyon/",
   },
   building: [
@@ -36,12 +36,14 @@ export const about = {
 
 export const contact = {
   email: "hhpendleton@gmail.com",
-  availability: "Always interested in connecting and discussing MarTech, web development, or side projects.",
+  availability:
+    "Always interested in connecting and discussing MarTech, web development, or side projects.",
   locationNote: "Based in Charleston, SC.",
 };
 
 export const navLinks = [
   { label: "Work", href: "#work" },
   { label: "About", href: "#about" },
+  { label: "Blog", href: "/blog" },
   { label: "Resume", href: "/resume" },
 ];

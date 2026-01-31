@@ -106,6 +106,66 @@
   .wide-container {
     @apply max-w-5xl mx-auto px-6;
   }
+
+  /* Blog prose styling - integrates with theme colors */
+  .prose {
+    --tw-prose-body: rgb(var(--color-text-muted));
+    --tw-prose-headings: rgb(var(--color-text));
+    --tw-prose-lead: rgb(var(--color-text-muted));
+    --tw-prose-links: rgb(var(--color-accent));
+    --tw-prose-bold: rgb(var(--color-text));
+    --tw-prose-counters: rgb(var(--color-text-subtle));
+    --tw-prose-bullets: rgb(var(--color-text-subtle));
+    --tw-prose-hr: rgb(var(--color-border));
+    --tw-prose-quotes: rgb(var(--color-text));
+    --tw-prose-quote-borders: rgb(var(--color-border));
+    --tw-prose-captions: rgb(var(--color-text-subtle));
+    --tw-prose-code: rgb(var(--color-text));
+    --tw-prose-pre-code: rgb(var(--color-text));
+    --tw-prose-pre-bg: rgb(var(--color-bg-subtle));
+    --tw-prose-th-borders: rgb(var(--color-border));
+    --tw-prose-td-borders: rgb(var(--color-border));
+  }
+
+  .prose h2 {
+    @apply text-title mt-10 mb-4;
+  }
+
+  .prose h3 {
+    @apply text-subtitle mt-8 mb-3;
+  }
+
+  .prose p {
+    @apply text-body leading-relaxed mb-6;
+  }
+
+  .prose a {
+    @apply underline underline-offset-2 hover:text-accent-muted transition-colors;
+  }
+
+  .prose code {
+    @apply font-mono text-small bg-bg-muted px-1.5 py-0.5 rounded;
+  }
+
+  .prose pre {
+    @apply bg-bg-subtle border border-border rounded-lg p-4 overflow-x-auto;
+  }
+
+  .prose pre code {
+    @apply bg-transparent p-0;
+  }
+
+  .prose blockquote {
+    @apply border-l-2 border-accent pl-4 italic;
+  }
+
+  .prose ul {
+    @apply space-y-2;
+  }
+
+  .prose li {
+    @apply text-body text-text-muted;
+  }
 }
 
 @layer utilities {

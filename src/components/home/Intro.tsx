@@ -1,11 +1,14 @@
-import { Section } from '@/components/layout';
-import { TopographicBackground } from '@/components/ui/TopographicBackground';
-import { intro } from '@/data/content';
-import { ArrowDown, Mail, Mountain } from 'lucide-react';
+import { Section } from "@/components/layout";
+import { TopographicBackground } from "@/components/ui/TopographicBackground";
+import { intro } from "@/data/content";
+import { ArrowDown, Mail, Mountain } from "lucide-react";
 
 export function Intro() {
   return (
-    <Section id="intro" className="pt-32 md:pt-40 pb-16 relative overflow-hidden min-h-[80vh] flex items-center">
+    <Section
+      id="intro"
+      className="pt-32 md:pt-40 pb-16 relative overflow-hidden min-h-[80vh] flex items-center"
+    >
       {/* Subtle topographic background */}
       <TopographicBackground
         className="top-0 left-0 right-0 h-full"
@@ -19,7 +22,7 @@ export function Intro() {
           <Mountain className="w-3.5 h-3.5 text-accent" />
           <span>Training for Black Canyon 100k</span>
           <span className="text-text-subtle">·</span>
-          <span className="text-text-subtle">Feb 2025</span>
+          <span className="text-text-subtle">Feb 2026</span>
         </div>
 
         {/* Name */}
@@ -28,9 +31,7 @@ export function Intro() {
         </h1>
 
         {/* Title */}
-        <p className="mt-3 text-subtitle text-text-muted">
-          {intro.subtitle}
-        </p>
+        <p className="mt-3 text-subtitle text-text-muted">{intro.subtitle}</p>
 
         {/* Description */}
         <p className="mt-8 text-body text-text-muted leading-relaxed">
@@ -38,9 +39,7 @@ export function Intro() {
         </p>
 
         {/* Location */}
-        <p className="mt-4 text-small text-text-subtle">
-          {intro.location}
-        </p>
+        <p className="mt-4 text-small text-text-subtle">{intro.location}</p>
 
         {/* CTAs */}
         <div className="mt-10 flex flex-wrap gap-4">
