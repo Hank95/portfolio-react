@@ -14,6 +14,80 @@ export interface BlogPost {
 // Local posts - add your posts here
 export const localPosts: BlogPost[] = [
   {
+    slug: "cribscore-1-2-release",
+    title: "CribScore 1.2: Leagues, Skunks, and One-Tap Scoring",
+    description:
+      "Introducing league standings with match points, head-to-head records, and a simpler tap-to-score interface in the latest CribScore update.",
+    content: `
+      <p>After a lot of cribbage games (and maybe a few too many lost to skunks), I'm excited to share what's new in CribScore 1.2. This update is all about tracking your progress over time and making the scoring experience even smoother.</p>
+
+      <h2>The One Feature I Couldn't Stop Thinking About</h2>
+      <p>Let me start with the smallest change that's made the biggest difference to how I use the app: <strong>tap-to-increment</strong>.</p>
+      <p>Previously, you had to drag the score dial to select points. It works great for hands worth 12 or 24, but when you just need to add 1 point for "go" or a single pair? Dragging felt like overkill.</p>
+      <p>Now you can just tap the dial to add +1. Tap, tap, tap — three points. It's faster, it feels more natural, and honestly I'm not sure why I didn't think of it sooner.</p>
+
+      <h2>Finally: A Way to Track Who's Actually Winning</h2>
+      <p>Here's the thing about cribbage — you might win a game, but <em>how</em> you win matters. If I beat you 121 to 118, sure, I won. But if I beat you 121 to 52? That's a <strong>double skunk</strong>, and in competitive cribbage, that's worth way more bragging rights.</p>
+      <p>Version 1.2 introduces a proper <strong>league system</strong> with match points:</p>
+      <ul>
+        <li><strong>Regular win</strong>: 1 match point</li>
+        <li><strong>Skunk</strong> (opponent &lt; 91 points): 2 match points</li>
+        <li><strong>Double skunk</strong> (opponent &lt; 61 points): 3 match points</li>
+      </ul>
+      <p>The new <strong>League Table</strong> tracks everyone's standings — wins, losses, total match points, even how many times you've been skunked (sorry). It's accessible from the Game History screen, so you can finally settle those "who's really the better player" debates with data.</p>
+
+      <h2>Head-to-Head Records</h2>
+      <p>Speaking of debates — ever wondered what your actual record is against a specific opponent? The new <strong>Head-to-Head</strong> view lets you pick two players and see:</p>
+      <ul>
+        <li>Total games played between them</li>
+        <li>Wins for each player</li>
+        <li>Skunks dealt to each other</li>
+        <li>Win percentages</li>
+        <li>Recent game history</li>
+      </ul>
+      <p>My wife and I have been keeping mental track of this for years. Now the app does it for us. (She's ahead. I'm working on it.)</p>
+
+      <h2>The Game Over Screen Got a Glow-Up</h2>
+      <p>When you win a game now, the victory screen actually tells you something useful:</p>
+      <ul>
+        <li>Whether you scored a skunk or double skunk</li>
+        <li>How many match points you earned</li>
+        <li>A little celebration that matches the winner's color</li>
+      </ul>
+      <p>It's a small touch, but it makes winning (or losing) feel more meaningful.</p>
+
+      <h2>Player Management</h2>
+      <p>Over time, you might end up with duplicate players — maybe you typed "Bob" once and "bob" another time. Or someone changes their nickname. Version 1.2 lets you:</p>
+      <ul>
+        <li><strong>Rename</strong> players (all their game history follows them)</li>
+        <li><strong>Merge</strong> duplicate players into one</li>
+        <li><strong>Delete</strong> players you don't need anymore</li>
+      </ul>
+      <p>It's the kind of housekeeping feature that doesn't sound exciting until you need it.</p>
+
+      <h2>Player Autocomplete</h2>
+      <p>Starting a new game is faster now too. When you type a player name, the app suggests existing players as you type. No more retyping the same names or accidentally creating duplicates.</p>
+
+      <h2>Under the Hood</h2>
+      <p>For the nerdy details: I also added a proper test suite for the core game logic. Skunk detection, match point calculations, league standings — it's all covered by unit tests now. Sleep better knowing that a skunk at 90 points correctly awards 2 match points.</p>
+
+      <hr />
+
+      <h2>What's Next?</h2>
+      <p>I'm already thinking about what comes next. Game timer visibility, perhaps. Or maybe iCloud sync so you can track games across devices. Let me know what features would make your cribbage nights better.</p>
+      <p>For now, update to 1.2 and go earn some match points. Just try not to get skunked.</p>
+
+      <hr />
+
+      <p><em>CribScore is a free cribbage scorekeeping app for iOS. Download it on the App Store.</em></p>
+    `,
+    publishedAt: "2026-01-31",
+    author: "Henry Pendleton",
+    source: "local",
+    tags: ["ios", "swiftui", "app-development", "cribbage"],
+    featured: true,
+  },
+  {
     slug: "raspberry-pi-eink-dashboard",
     title: "From Dusty Raspberry Pi to Full-Stack Enlightenment",
     description:
