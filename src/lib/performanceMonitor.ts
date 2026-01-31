@@ -184,30 +184,6 @@ class PerformanceMonitor {
       });
     }
 
-    // Send to custom analytics endpoint (if you have one)
-    this.sendToCustomAnalytics(metric);
-  }
-
-  private async sendToCustomAnalytics(metric: PerformanceMetric) {
-    try {
-      // You can replace this with your own analytics endpoint
-      await fetch('/api/analytics/performance', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          metric: metric.name,
-          value: metric.value,
-          rating: metric.rating,
-          timestamp: metric.timestamp,
-          url: window.location.pathname,
-          userAgent: navigator.userAgent,
-        }),
-      });
-    } catch (error) {
-      console.warn('Failed to send performance data to analytics:', error);
-    }
   }
 
   // Public methods
