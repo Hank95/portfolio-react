@@ -14,6 +14,65 @@ export interface BlogPost {
 // Local posts - add your posts here
 export const localPosts: BlogPost[] = [
   {
+    slug: "portfolio-redesign-2026",
+    title: "Redesigning My Portfolio: Ultramarathons, Theme Toggles, and Deleting 555KB of JavaScript",
+    description:
+      "A look at the complete redesign of my portfolio site, featuring an interactive elevation profile, dark mode, a new blog, and the satisfying removal of an unused 3D globe.",
+    content: `
+      <p>I finally got around to redesigning my portfolio. What started as "maybe I should update my job title" turned into a complete rebuild with some features I'm genuinely proud of. Here's what changed and why.</p>
+
+      <h2>The Elevation Profile: 62 Miles of Scroll Progress</h2>
+      <p>The most visible change is the interactive elevation profile at the bottom of the home page. As you scroll through the site, a runner icon progresses along the course profile of the <strong>Black Canyon 100K</strong>, an ultramarathon I ran from Mayer to Anthem, Arizona.</p>
+      <p>It's not just decorative. The profile is generated from actual GPX data, 150 elevation points sampled from the real course. Aid stations are marked along the route (Bumble Bee, Black Canyon City, Table Mesa), and the current elevation displays as you scroll. Portfolio sections map to race milestones: Start, Work, About, Finish.</p>
+      <p>Is it over-engineered for a portfolio site? Absolutely. But it's mine, and it makes me smile every time I scroll past Gloriana Mine at mile 24.</p>
+
+      <h2>Dark Mode (Finally)</h2>
+      <p>The site now supports <strong>light, dark, and system</strong> theme preferences. I built it with CSS custom properties so the entire color system switches with a single class toggle on the document root.</p>
+      <p>The toggle itself went through a few iterations. I wanted it to feel tactile without being distracting, so it's a simple icon button in the header that cycles through the three modes. Your preference persists in localStorage.</p>
+      <p>Getting the colors right for both modes took longer than I expected. Dark mode isn't just "invert everything", you need to think about contrast, hierarchy, and which elements should pop versus recede. The accent orange works well in both modes, but I had to adjust the text-muted values significantly.</p>
+
+      <h2>A Blog That Lives in the Codebase</h2>
+      <p>I added a blog section, but I didn't want to set up a CMS or deal with a headless backend just for occasional posts. Instead, blog posts live as TypeScript objects in <code>src/data/blog.ts</code>.</p>
+      <p>Each post has a slug, title, description, HTML content, and metadata like tags and publish date. It's not as flexible as a proper CMS, but it has zero runtime dependencies and deploys with the rest of the site. For my posting frequency, it's perfect.</p>
+      <p>The blog pages use the same lazy-loading pattern as the rest of the site. Posts are sorted by date, and there's a simple featured flag for posts I want to highlight.</p>
+
+      <h2>Goodbye, Globe (555KB Lighter)</h2>
+      <p>The old site had an interactive 3D globe built with Three.js and react-globe.gl. You could drop pins on it. It was cool when I built it.</p>
+      <p>But I never actually used it, and neither did anyone else. The globe alone added <strong>555KB gzipped</strong> to the bundle, more than the entire rest of the application combined. It was a hidden easter egg that most visitors never found.</p>
+      <p>Deleting it felt great. The build is faster, the bundle is smaller, and I removed 61 npm packages in one commit. Sometimes the best feature is the one you remove.</p>
+
+      <h2>Better Error Handling</h2>
+      <p>I added a proper 404 page. Previously, invalid routes just showed a blank error screen from React Router. Now there's a friendly "page not found" message with navigation back to the home page.</p>
+      <p>I also fixed a caching issue that was causing problems after deployments. Netlify was caching <code>index.html</code>, so returning visitors would try to load old JavaScript chunks that no longer existed. The fix was simple: set <code>Cache-Control: must-revalidate</code> on the HTML and <code>immutable</code> on the hashed assets.</p>
+
+      <h2>SEO and Structured Data</h2>
+      <p>Each page now includes JSON-LD structured data for better search engine understanding. The home page has Person schema, project pages have CreativeWork schema, and blog posts have Article schema.</p>
+      <p>I also cleaned up the meta tags and ensured Open Graph and Twitter Card data is set correctly for social sharing.</p>
+
+      <h2>The Stack</h2>
+      <p>The technical foundation stayed the same: React 18, Vite, TypeScript, Tailwind CSS. I'm using react-router-dom for routing with lazy-loaded pages, and Supabase for the contact form backend.</p>
+      <p>The redesign was mostly about refining the component structure, improving the visual design, and adding features I'd been putting off. The codebase is cleaner now, with better separation between layout components, page sections, and UI primitives.</p>
+
+      <h2>What's Next</h2>
+      <p>I'm happy with where the site is now, but there are a few things on my list:</p>
+      <ul>
+        <li>More blog posts (obviously)</li>
+        <li>Maybe some interactive demos for projects</li>
+        <li>Performance monitoring beyond Core Web Vitals</li>
+      </ul>
+      <p>For now, the site does what I need: it shows my work, tells my story, and doesn't make me cringe when I share the link.</p>
+
+      <hr />
+
+      <p><em>The source code is available on <a href="https://github.com/Hank95/portfolio-react" target="_blank" rel="noopener noreferrer">GitHub</a> if you want to see how any of this works.</em></p>
+    `,
+    publishedAt: "2026-01-31",
+    author: "Henry Pendleton",
+    source: "local",
+    tags: ["react", "portfolio", "web-development", "design"],
+    featured: true,
+  },
+  {
     slug: "cribscore-1-2-release",
     title: "CribScore 1.2: Leagues, Skunks, and One-Tap Scoring",
     description:
