@@ -37,14 +37,14 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-900">
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-bg-subtle">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center space-y-6 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#4d6e5e] dark:text-[#a8d5ba]">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-text">
               Get in Touch
             </h2>
-            <p className="mx-auto max-w-[700px] text-gray-700 md:text-xl dark:text-gray-400">
+            <p className="mx-auto max-w-[700px] text-text-muted md:text-xl">
               Have a project in mind or just want to say hello? Fill out the
               form and I'll get back to you as soon as possible.
             </p>
@@ -53,7 +53,7 @@ const ContactForm = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label
-                  className="text-gray-700 dark:text-gray-400"
+                  className="text-text-muted"
                   htmlFor="name"
                 >
                   Name
@@ -65,12 +65,12 @@ const ContactForm = () => {
                   id="name"
                   placeholder="Enter your name"
                   required
-                  className="border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-500"
+                  className="border-border bg-bg text-text placeholder:text-text-subtle"
                 />
               </div>
               <div className="space-y-2">
                 <Label
-                  className="text-gray-700 dark:text-gray-400"
+                  className="text-text-muted"
                   htmlFor="email"
                 >
                   Email
@@ -82,19 +82,19 @@ const ContactForm = () => {
                   placeholder="Enter your email"
                   type="email"
                   required
-                  className="border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-500"
+                  className="border-border bg-bg text-text placeholder:text-text-subtle"
                 />
               </div>
             </div>
             <div className="space-y-2">
               <Label
-                className="text-gray-700 dark:text-gray-400"
+                className="text-text-muted"
                 htmlFor="message"
               >
                 Message
               </Label>
               <Textarea
-                className="min-h-[120px] border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-500"
+                className="min-h-[120px] border-border bg-bg text-text placeholder:text-text-subtle"
                 id="message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
@@ -103,7 +103,7 @@ const ContactForm = () => {
               />
             </div>
             <Button
-              className="w-full text-white text-lg bg-gray-700 hover:bg-gray-600 dark:bg-gray-100 dark:hover:bg-gray-200 dark:text-gray-900"
+              className="w-full text-bg text-lg bg-text hover:bg-text-muted"
               type="submit"
               disabled={loading}
             >
@@ -111,7 +111,7 @@ const ContactForm = () => {
             </Button>
             {error && <p className="text-red-500 text-sm">{error}</p>}
             {success && (
-              <p className="text-green-500 text-sm">
+              <p className="text-status-live text-sm">
                 Message sent successfully!
               </p>
             )}

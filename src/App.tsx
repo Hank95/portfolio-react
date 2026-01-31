@@ -1,16 +1,14 @@
-import { Outlet } from "react-router-dom";
-import Header from "@/components/Header.tsx";
-import Footer from "@/components/Footer.tsx";
-import "./App.css";
+import { Outlet } from 'react-router-dom';
+import { Header, Footer } from '@/components/layout';
+import { JourneyBar } from '@/components/ui/JourneyBar';
 
-const App: React.FC = () => {
+export default function App() {
   return (
-    <>
+    <div className="min-h-screen flex flex-col bg-bg text-text">
       <Header />
       <Outlet />
       <Footer />
-    </>
+      <JourneyBar />
+    </div>
   );
-};
-
-export default App;
+}

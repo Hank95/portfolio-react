@@ -4,29 +4,47 @@ export const resume = {
   phone: "540-761-1806",
   email: "hhpendleton@gmail.com",
   github: "hank95",
-  title: "Full-Stack Software Engineer",
+  title: "MarTech Software Engineer",
   summary:
-    "Software engineer experienced in front-end and back-end technologies. With a background in sales and finance, I bring strong analytical and communication skills. My passion to create and problem solve, matched with a knack for learning quickly, makes me a great addition to any team.",
+    "MarTech Software Engineer building web and marketing technology solutions that drive digital performance. I design and develop websites, integrate data feeds, and optimize digital tools that enable scalable marketing initiatives. Background in frontend development, native iOS apps, and Python analytics, combined with sales and finance experience, brings strong analytical and communication skills to translating marketing goals into technical execution.",
   technicalSkills: {
-    languages: ["JavaScript", "TypeScript", "Ruby", "Swift"],
+    languages: ["JavaScript", "TypeScript", "Python", "Swift", "Ruby", "SQL"],
     webDevelopment: [
       "React",
       "Next.js",
       "Vue.js",
       "React Native",
+      "Flask",
       "Ruby on Rails",
       "Node.js",
     ],
-    databases: ["SQL", "PostgreSQL"],
+    databases: ["PostgreSQL", "SQLite"],
     cloudServices: ["AWS (S3, Lambda)", "Firebase", "CloudKit"],
-    containers: ["Docker"],
+    martech: ["Google Analytics", "SEO", "CMS Platforms", "API Integrations"],
   },
   professionalExperience: [
     {
+      company: "Maymoth Homes",
+      location: "Charleston, SC",
+      title: "MarTech Software Engineer",
+      date: "01/2026 - Present",
+      projects: [
+        {
+          name: "Marketing Technology & Web Development",
+          description: [
+            "Design, develop, and maintain marketing and web technology systems supporting digital campaigns, automation, and lead generation initiatives.",
+            "Implement and maintain tracking tags, data layers, and analytics scripts to ensure accurate measurement of user behavior and campaign performance.",
+            "Build and maintain API integrations connecting marketing platforms including CRM, CMS, and analytics tools.",
+            "Enhance website functionality, speed, and SEO readiness through clean code, structured data, and performance tuning.",
+          ],
+        },
+      ],
+    },
+    {
       company: "Apex146",
       location: "Remote",
-      title: "Lead Front-end Software Developer",
-      date: "03/2022 - Present",
+      title: "Frontend Developer",
+      date: "03/2022 - 12/2024",
       projects: [
         {
           name: "White Label Virtual Sports Platform",

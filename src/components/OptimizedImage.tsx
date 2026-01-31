@@ -176,7 +176,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
           onLoad={handleLoad}
           onError={handleError}
           // Performance optimizations
-          {...(priority && { fetchPriority: 'high' as any })}
+          {...(priority && { fetchPriority: 'high' as 'high' | 'low' | 'auto' })}
         />
       </picture>
     </div>
@@ -184,6 +184,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
 };
 
 // Hook for preloading images
+// eslint-disable-next-line react-refresh/only-export-components
 export const useImagePreloader = () => {
   const preloadImage = (src: string, webpSrc?: string) => {
     return new Promise<boolean>((resolve) => {

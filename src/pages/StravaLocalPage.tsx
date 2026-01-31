@@ -33,12 +33,12 @@ export default function StravaLocalPage() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="w-full py-12 md:py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
+        className="w-full py-12 md:py-24 bg-gradient-to-b from-bg-subtle to-bg"
       >
         <div className="container px-4 md:px-6 mx-auto">
           <Link
             to="/#projects"
-            className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#4d6e5e] dark:text-gray-400 dark:hover:text-[#a8d5ba] mb-6 transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-text-muted hover:text-accent mb-6 transition-colors"
           >
             <ArrowRightIcon className="w-4 h-4 rotate-180" />
             Back to Projects
@@ -46,16 +46,16 @@ export default function StravaLocalPage() {
 
           <div className="flex flex-col lg:flex-row gap-8 items-start">
             <div className="flex-1 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#4d6e5e]/10 text-[#4d6e5e] dark:bg-[#a8d5ba]/10 dark:text-[#a8d5ba] text-sm font-medium">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">
                 <DatabaseIcon className="w-4 h-4" />
                 Local-First Analytics
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-text">
                 Strava Local
               </h1>
 
-              <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-2xl">
+              <p className="text-lg sm:text-xl text-text-muted max-w-2xl">
                 A privacy-focused ingestion and analysis tool for your Strava
                 activity data. Your runs, rides, and training metrics stay on
                 your machine—never uploaded anywhere.
@@ -66,7 +66,7 @@ export default function StravaLocalPage() {
                   href="https://github.com/Hank95/strava-local"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 text-base font-medium rounded-lg bg-[#4d6e5e] text-white hover:bg-[#4d6e5e]/90 dark:bg-[#a8d5ba] dark:text-gray-900 dark:hover:bg-[#a8d5ba]/90 transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 text-base font-medium rounded-lg bg-accent text-white hover:bg-accent-muted transition-colors"
                 >
                   <svg
                     className="w-5 h-5"
@@ -82,7 +82,7 @@ export default function StravaLocalPage() {
 
             {/* Hero Screenshot */}
             <div className="w-full lg:flex-1 lg:max-w-xl">
-              <div className="relative rounded-xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700">
+              <div className="relative rounded-xl overflow-hidden shadow-2xl border border-border">
                 <img
                   src="/strava-local/dashboard.png"
                   alt="Strava Local Dashboard showing activity statistics and charts"
@@ -98,19 +98,19 @@ export default function StravaLocalPage() {
       {/* Features Section */}
       <section
         ref={featuresRef}
-        className="w-full py-16 md:py-24 bg-white dark:bg-gray-900"
+        className="w-full py-16 md:py-24 bg-bg"
       >
         <div className="container px-4 md:px-6 mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-center mb-8 sm:mb-12 text-[#4d6e5e] dark:text-[#a8d5ba]">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-center mb-8 sm:mb-12 text-text">
             Features
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="border-[#4d6e5e]/20 dark:border-[#a8d5ba]/20">
+            <Card className="border-border">
               <CardHeader>
-                <div className="w-10 h-10 rounded-lg bg-[#4d6e5e]/10 dark:bg-[#a8d5ba]/10 flex items-center justify-center mb-2">
+                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-2">
                   <svg
-                    className="w-5 h-5 text-[#4d6e5e] dark:text-[#a8d5ba]"
+                    className="w-5 h-5 text-accent"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -123,7 +123,7 @@ export default function StravaLocalPage() {
                     />
                   </svg>
                 </div>
-                <CardTitle className="text-[#4d6e5e] dark:text-[#a8d5ba]">
+                <CardTitle className="text-text">
                   Dashboard
                 </CardTitle>
                 <CardDescription>
@@ -133,11 +133,11 @@ export default function StravaLocalPage() {
               </CardHeader>
             </Card>
 
-            <Card className="border-[#4d6e5e]/20 dark:border-[#a8d5ba]/20">
+            <Card className="border-border">
               <CardHeader>
-                <div className="w-10 h-10 rounded-lg bg-[#4d6e5e]/10 dark:bg-[#a8d5ba]/10 flex items-center justify-center mb-2">
+                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-2">
                   <svg
-                    className="w-5 h-5 text-[#4d6e5e] dark:text-[#a8d5ba]"
+                    className="w-5 h-5 text-accent"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -150,7 +150,7 @@ export default function StravaLocalPage() {
                     />
                   </svg>
                 </div>
-                <CardTitle className="text-[#4d6e5e] dark:text-[#a8d5ba]">
+                <CardTitle className="text-text">
                   Interactive Maps
                 </CardTitle>
                 <CardDescription>
@@ -160,11 +160,11 @@ export default function StravaLocalPage() {
               </CardHeader>
             </Card>
 
-            <Card className="border-[#4d6e5e]/20 dark:border-[#a8d5ba]/20">
+            <Card className="border-border">
               <CardHeader>
-                <div className="w-10 h-10 rounded-lg bg-[#4d6e5e]/10 dark:bg-[#a8d5ba]/10 flex items-center justify-center mb-2">
+                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-2">
                   <svg
-                    className="w-5 h-5 text-[#4d6e5e] dark:text-[#a8d5ba]"
+                    className="w-5 h-5 text-accent"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -177,7 +177,7 @@ export default function StravaLocalPage() {
                     />
                   </svg>
                 </div>
-                <CardTitle className="text-[#4d6e5e] dark:text-[#a8d5ba]">
+                <CardTitle className="text-text">
                   Training Metrics
                 </CardTitle>
                 <CardDescription>
@@ -187,11 +187,11 @@ export default function StravaLocalPage() {
               </CardHeader>
             </Card>
 
-            <Card className="border-[#4d6e5e]/20 dark:border-[#a8d5ba]/20">
+            <Card className="border-border">
               <CardHeader>
-                <div className="w-10 h-10 rounded-lg bg-[#4d6e5e]/10 dark:bg-[#a8d5ba]/10 flex items-center justify-center mb-2">
+                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-2">
                   <svg
-                    className="w-5 h-5 text-[#4d6e5e] dark:text-[#a8d5ba]"
+                    className="w-5 h-5 text-accent"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -204,7 +204,7 @@ export default function StravaLocalPage() {
                     />
                   </svg>
                 </div>
-                <CardTitle className="text-[#4d6e5e] dark:text-[#a8d5ba]">
+                <CardTitle className="text-text">
                   Heart Rate Analysis
                 </CardTitle>
                 <CardDescription>
@@ -214,11 +214,11 @@ export default function StravaLocalPage() {
               </CardHeader>
             </Card>
 
-            <Card className="border-[#4d6e5e]/20 dark:border-[#a8d5ba]/20">
+            <Card className="border-border">
               <CardHeader>
-                <div className="w-10 h-10 rounded-lg bg-[#4d6e5e]/10 dark:bg-[#a8d5ba]/10 flex items-center justify-center mb-2">
+                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-2">
                   <svg
-                    className="w-5 h-5 text-[#4d6e5e] dark:text-[#a8d5ba]"
+                    className="w-5 h-5 text-accent"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -231,7 +231,7 @@ export default function StravaLocalPage() {
                     />
                   </svg>
                 </div>
-                <CardTitle className="text-[#4d6e5e] dark:text-[#a8d5ba]">
+                <CardTitle className="text-text">
                   Privacy First
                 </CardTitle>
                 <CardDescription>
@@ -241,11 +241,11 @@ export default function StravaLocalPage() {
               </CardHeader>
             </Card>
 
-            <Card className="border-[#4d6e5e]/20 dark:border-[#a8d5ba]/20">
+            <Card className="border-border">
               <CardHeader>
-                <div className="w-10 h-10 rounded-lg bg-[#4d6e5e]/10 dark:bg-[#a8d5ba]/10 flex items-center justify-center mb-2">
+                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-2">
                   <svg
-                    className="w-5 h-5 text-[#4d6e5e] dark:text-[#a8d5ba]"
+                    className="w-5 h-5 text-accent"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -258,7 +258,7 @@ export default function StravaLocalPage() {
                     />
                   </svg>
                 </div>
-                <CardTitle className="text-[#4d6e5e] dark:text-[#a8d5ba]">
+                <CardTitle className="text-text">
                   Activity Browser
                 </CardTitle>
                 <CardDescription>
@@ -274,17 +274,17 @@ export default function StravaLocalPage() {
       {/* Screenshots Section */}
       <section
         ref={screenshotsRef}
-        className="w-full py-16 md:py-24 bg-gray-50 dark:bg-gray-800"
+        className="w-full py-16 md:py-24 bg-bg-subtle"
       >
         <div className="container px-4 md:px-6 mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-center mb-8 sm:mb-12 text-[#4d6e5e] dark:text-[#a8d5ba]">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-center mb-8 sm:mb-12 text-text">
             Screenshots
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Heatmap Screenshot */}
             <div className="space-y-4">
-              <div className="rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
+              <div className="rounded-xl overflow-hidden shadow-lg border border-border">
                 <img
                   src="/strava-local/heatmap.png"
                   alt="Strava Local Heatmap showing GPS tracks overlaid on a map"
@@ -292,10 +292,10 @@ export default function StravaLocalPage() {
                   loading="lazy"
                 />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-text">
                 Activity Heatmap
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-text-muted">
                 Visualize all your GPS tracks overlaid on an interactive map.
                 Filter by activity type, date range, or specific routes.
               </p>
@@ -303,7 +303,7 @@ export default function StravaLocalPage() {
 
             {/* Training Metrics Screenshot */}
             <div className="space-y-4">
-              <div className="rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
+              <div className="rounded-xl overflow-hidden shadow-lg border border-border">
                 <img
                   src="/strava-local/metrics.png"
                   alt="Strava Local CTL/ATL/TSB training metrics chart"
@@ -311,10 +311,10 @@ export default function StravaLocalPage() {
                   loading="lazy"
                 />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-text">
                 CTL/ATL/TSB Chart
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-text-muted">
                 Track your fitness (CTL), fatigue (ATL), and form (TSB) over
                 time. Understand your training load and optimize recovery.
               </p>
@@ -326,19 +326,19 @@ export default function StravaLocalPage() {
       {/* Architecture Section */}
       <section
         ref={architectureRef}
-        className="w-full py-16 md:py-24 bg-white dark:bg-gray-900"
+        className="w-full py-16 md:py-24 bg-bg"
       >
         <div className="container px-4 md:px-6 mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-center mb-8 sm:mb-12 text-[#4d6e5e] dark:text-[#a8d5ba]">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-center mb-8 sm:mb-12 text-text">
             Tech Stack & Architecture
           </h2>
 
           <div className="max-w-4xl mx-auto">
-            <Card className="border-[#4d6e5e]/20 dark:border-[#a8d5ba]/20">
+            <Card className="border-border">
               <CardContent className="p-6 md:p-8">
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="space-y-4">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="text-lg font-semibold text-text">
                       Backend
                     </h3>
                     <div className="flex flex-wrap gap-2">
@@ -346,7 +346,7 @@ export default function StravaLocalPage() {
                         (tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1 text-sm font-medium rounded-full bg-[#4d6e5e]/10 text-[#4d6e5e] dark:bg-[#a8d5ba]/10 dark:text-[#a8d5ba]"
+                            className="px-3 py-1 text-sm font-medium rounded-full bg-accent/10 text-accent"
                           >
                             {tech}
                           </span>
@@ -356,7 +356,7 @@ export default function StravaLocalPage() {
                   </div>
 
                   <div className="space-y-4">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="text-lg font-semibold text-text">
                       Frontend
                     </h3>
                     <div className="flex flex-wrap gap-2">
@@ -364,7 +364,7 @@ export default function StravaLocalPage() {
                         (tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1 text-sm font-medium rounded-full bg-[#4d6e5e]/10 text-[#4d6e5e] dark:bg-[#a8d5ba]/10 dark:text-[#a8d5ba]"
+                            className="px-3 py-1 text-sm font-medium rounded-full bg-accent/10 text-accent"
                           >
                             {tech}
                           </span>
@@ -374,7 +374,7 @@ export default function StravaLocalPage() {
                   </div>
 
                   <div className="space-y-4">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="text-lg font-semibold text-text">
                       Data Processing
                     </h3>
                     <div className="flex flex-wrap gap-2">
@@ -382,7 +382,7 @@ export default function StravaLocalPage() {
                         (tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1 text-sm font-medium rounded-full bg-[#4d6e5e]/10 text-[#4d6e5e] dark:bg-[#a8d5ba]/10 dark:text-[#a8d5ba]"
+                            className="px-3 py-1 text-sm font-medium rounded-full bg-accent/10 text-accent"
                           >
                             {tech}
                           </span>
@@ -392,7 +392,7 @@ export default function StravaLocalPage() {
                   </div>
 
                   <div className="space-y-4">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="text-lg font-semibold text-text">
                       Metrics Engine
                     </h3>
                     <div className="flex flex-wrap gap-2">
@@ -400,7 +400,7 @@ export default function StravaLocalPage() {
                         (tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1 text-sm font-medium rounded-full bg-[#4d6e5e]/10 text-[#4d6e5e] dark:bg-[#a8d5ba]/10 dark:text-[#a8d5ba]"
+                            className="px-3 py-1 text-sm font-medium rounded-full bg-accent/10 text-accent"
                           >
                             {tech}
                           </span>
@@ -410,8 +410,8 @@ export default function StravaLocalPage() {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                <div className="mt-8 pt-8 border-t border-border">
+                  <h3 className="text-lg font-semibold text-text mb-4">
                     Database Schema
                   </h3>
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
@@ -424,7 +424,7 @@ export default function StravaLocalPage() {
                     ].map((table) => (
                       <div
                         key={table}
-                        className="px-3 py-2 text-xs font-mono rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-center"
+                        className="px-3 py-2 text-xs font-mono rounded-lg bg-bg-muted text-text-muted text-center"
                       >
                         {table}
                       </div>
@@ -438,12 +438,12 @@ export default function StravaLocalPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-16 bg-[#4d6e5e] dark:bg-[#a8d5ba]">
+      <section className="w-full py-16 bg-accent">
         <div className="container px-4 md:px-6 mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white dark:text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Ready to own your fitness data?
           </h2>
-          <p className="text-white/80 dark:text-gray-800 mb-8 max-w-xl mx-auto">
+          <p className="text-white/80 mb-8 max-w-xl mx-auto">
             Clone the repo, run the setup script, and start analyzing your
             Strava data in minutes.
           </p>
@@ -451,7 +451,7 @@ export default function StravaLocalPage() {
             href="https://github.com/Hank95/strava-local"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 text-base font-medium rounded-lg bg-white text-[#4d6e5e] hover:bg-gray-100 dark:bg-gray-900 dark:text-[#a8d5ba] dark:hover:bg-gray-800 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 text-base font-medium rounded-lg bg-white text-accent hover:bg-white/90 transition-colors"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />

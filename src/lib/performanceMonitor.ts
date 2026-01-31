@@ -116,6 +116,7 @@ class PerformanceMonitor {
     });
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private observeMetric(entryType: string, callback: (entry: any) => void) {
     try {
       const observer = new PerformanceObserver((list) => {
@@ -175,7 +176,7 @@ class PerformanceMonitor {
   private sendToAnalytics(metric: PerformanceMetric) {
     // Send to Google Analytics 4
     if (typeof window !== 'undefined' && 'gtag' in window) {
-      (window as any).gtag('event', 'web_vitals', {
+      (window as unknown as { gtag: (command: string, action: string, params: Record<string, unknown>) => void }).gtag('event', 'web_vitals', {
         event_category: 'Performance',
         event_label: metric.name,
         value: Math.round(metric.value),

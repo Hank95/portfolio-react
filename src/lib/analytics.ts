@@ -57,13 +57,6 @@ export const trackResumeDownload = () => {
   trackEvent("download", "resume", "pdf_download");
 };
 
-// Track globe pin interactions
-export const trackGlobeInteraction = (
-  action: "pin_created" | "pin_clicked"
-) => {
-  trackEvent(action, "globe", action);
-};
-
 // Track theme toggle
 export const trackThemeToggle = (theme: "light" | "dark") => {
   trackEvent("toggle_theme", "ui", theme);
