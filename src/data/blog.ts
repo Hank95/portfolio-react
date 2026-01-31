@@ -24,20 +24,20 @@ export const localPosts: BlogPost[] = [
       <h2>The One Feature I Couldn't Stop Thinking About</h2>
       <p>Let me start with the smallest change that's made the biggest difference to how I use the app: <strong>tap-to-increment</strong>.</p>
       <p>Previously, you had to drag the score dial to select points. It works great for hands worth 12 or 24, but when you just need to add 1 point for "go" or a single pair? Dragging felt like overkill.</p>
-      <p>Now you can just tap the dial to add +1. Tap, tap, tap — three points. It's faster, it feels more natural, and honestly I'm not sure why I didn't think of it sooner.</p>
+      <p>Now you can just tap the dial to add +1. Tap, tap, tap, three points. It's faster, it feels more natural, and honestly I'm not sure why I didn't think of it sooner.</p>
 
       <h2>Finally: A Way to Track Who's Actually Winning</h2>
-      <p>Here's the thing about cribbage — you might win a game, but <em>how</em> you win matters. If I beat you 121 to 118, sure, I won. But if I beat you 121 to 52? That's a <strong>double skunk</strong>, and in competitive cribbage, that's worth way more bragging rights.</p>
+      <p>Here's the thing about cribbage, you might win a game, but <em>how</em> you win matters. If I beat you 121 to 118, sure, I won. But if I beat you 121 to 52? That's a <strong>double skunk</strong>, and in competitive cribbage, that's worth way more bragging rights.</p>
       <p>Version 1.2 introduces a proper <strong>league system</strong> with match points:</p>
       <ul>
         <li><strong>Regular win</strong>: 1 match point</li>
         <li><strong>Skunk</strong> (opponent &lt; 91 points): 2 match points</li>
         <li><strong>Double skunk</strong> (opponent &lt; 61 points): 3 match points</li>
       </ul>
-      <p>The new <strong>League Table</strong> tracks everyone's standings — wins, losses, total match points, even how many times you've been skunked (sorry). It's accessible from the Game History screen, so you can finally settle those "who's really the better player" debates with data.</p>
+      <p>The new <strong>League Table</strong> tracks everyone's standings, wins, losses, total match points, even how many times you've been skunked (sorry). It's accessible from the Game History screen, so you can finally settle those "who's really the better player" debates with data.</p>
 
       <h2>Head-to-Head Records</h2>
-      <p>Speaking of debates — ever wondered what your actual record is against a specific opponent? The new <strong>Head-to-Head</strong> view lets you pick two players and see:</p>
+      <p>Speaking of debates, ever wondered what your actual record is against a specific opponent? The new <strong>Head-to-Head</strong> view lets you pick two players and see:</p>
       <ul>
         <li>Total games played between them</li>
         <li>Wins for each player</li>
@@ -57,7 +57,7 @@ export const localPosts: BlogPost[] = [
       <p>It's a small touch, but it makes winning (or losing) feel more meaningful.</p>
 
       <h2>Player Management</h2>
-      <p>Over time, you might end up with duplicate players — maybe you typed "Bob" once and "bob" another time. Or someone changes their nickname. Version 1.2 lets you:</p>
+      <p>Over time, you might end up with duplicate players, maybe you typed "Bob" once and "bob" another time. Or someone changes their nickname. Version 1.2 lets you:</p>
       <ul>
         <li><strong>Rename</strong> players (all their game history follows them)</li>
         <li><strong>Merge</strong> duplicate players into one</li>
@@ -69,7 +69,7 @@ export const localPosts: BlogPost[] = [
       <p>Starting a new game is faster now too. When you type a player name, the app suggests existing players as you type. No more retyping the same names or accidentally creating duplicates.</p>
 
       <h2>Under the Hood</h2>
-      <p>For the nerdy details: I also added a proper test suite for the core game logic. Skunk detection, match point calculations, league standings — it's all covered by unit tests now. Sleep better knowing that a skunk at 90 points correctly awards 2 match points.</p>
+      <p>For the nerdy details: I also added a proper test suite for the core game logic. Skunk detection, match point calculations, league standings, it's all covered by unit tests now. Sleep better knowing that a skunk at 90 points correctly awards 2 match points.</p>
 
       <hr />
 
