@@ -40,10 +40,9 @@ const RoutePreloader: React.FC<RoutePreloaderProps> = ({
       importFunction()
         .then(() => {
           preloadedRoutes.add(route);
-          console.log(`Preloaded route: ${route}`);
         })
-        .catch((error) => {
-          console.warn(`Failed to preload route ${route}:`, error);
+        .catch(() => {
+          // Silently fail - preloading is a performance optimization, not critical
         });
     }
   }, []);
@@ -131,8 +130,7 @@ export const useRoutePreloader = () => {
           preloadedRoutes.add(route);
           return true;
         })
-        .catch((error) => {
-          console.warn(`Failed to preload route ${route}:`, error);
+        .catch(() => {
           return false;
         });
     }

@@ -20,9 +20,6 @@ export function registerSW() {
 
       if (isLocalhost) {
         checkValidServiceWorker(swUrl);
-        navigator.serviceWorker.ready.then(() => {
-          console.log('SW ready in localhost');
-        });
       } else {
         registerValidSW(swUrl);
       }
@@ -42,18 +39,15 @@ function registerValidSW(swUrl: string) {
         installingWorker.onstatechange = () => {
           if (installingWorker.state === 'installed') {
             if (navigator.serviceWorker.controller) {
-              console.log('New content available; please refresh.');
               // Show update notification to user
               showUpdateNotification();
-            } else {
-              console.log('Content cached for offline use.');
             }
           }
         };
       };
     })
-    .catch((error) => {
-      console.error('Error during service worker registration:', error);
+    .catch(() => {
+      // Registration failed silently
     });
 }
 
@@ -77,7 +71,7 @@ function checkValidServiceWorker(swUrl: string) {
       }
     })
     .catch(() => {
-      console.log('No internet connection found. App is running in offline mode.');
+      // Offline mode - no action needed
     });
 }
 
@@ -97,8 +91,8 @@ export function unregisterSW() {
       .then((registration) => {
         registration.unregister();
       })
-      .catch((error) => {
-        console.error(error.message);
+      .catch(() => {
+        // Unregister failed silently
       });
   }
 }

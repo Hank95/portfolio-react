@@ -116,11 +116,11 @@ export default function ProjectDetail() {
           <Section className="pt-0 pb-12" wide>
             {/* Featured image (first one) */}
             <figure className="group">
-              <div className="overflow-hidden rounded-xl border border-border bg-bg-subtle shadow-2xl shadow-black/20">
+              <div className="overflow-hidden rounded-xl border border-border bg-bg-subtle shadow-2xl shadow-black/20 aspect-video">
                 <img
                   src={project.images[0].src}
                   alt={project.images[0].alt}
-                  className="w-full h-auto"
+                  className="w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
@@ -136,11 +136,11 @@ export default function ProjectDetail() {
               <div className="mt-8 grid gap-6 md:grid-cols-2">
                 {project.images.slice(1).map((image, index) => (
                   <figure key={index} className="group">
-                    <div className="overflow-hidden rounded-lg border border-border bg-bg-subtle shadow-lg shadow-black/10">
+                    <div className="overflow-hidden rounded-lg border border-border bg-bg-subtle shadow-lg shadow-black/10 aspect-video">
                       <img
                         src={image.src}
                         alt={image.alt}
-                        className="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]"
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                         loading="lazy"
                       />
                     </div>

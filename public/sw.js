@@ -167,7 +167,6 @@ self.addEventListener('sync', (event) => {
 async function retryFailedRequests() {
   // Implementation would depend on your specific needs
   // This is a placeholder for background sync functionality
-  console.log('Retrying failed requests...');
 }
 
 // Handle service worker updates
@@ -177,30 +176,4 @@ self.addEventListener('message', (event) => {
   }
 });
 
-// Performance monitoring
-self.addEventListener('fetch', (event) => {
-  const start = performance.now();
-  
-  event.respondWith(
-    fetch(event.request)
-      .then((response) => {
-        const duration = performance.now() - start;
-        
-        // Send performance data to analytics
-        if (duration > 1000) { // Log slow requests
-          self.clients.matchAll().then((clients) => {
-            clients.forEach((client) => {
-              client.postMessage({
-                type: 'SLOW_REQUEST',
-                url: event.request.url,
-                duration
-              });
-            });
-          });
-        }
-        
-        return response;
-      })
-  );
-});
 } // End initProductionServiceWorker
